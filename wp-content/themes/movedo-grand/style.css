@@ -39,10 +39,14 @@ Template:     movedo
 
 /* Restore underlines on links removed by Movedo theme */
 
-a,
-a:hover,
-a:focus,
-a:visited {
+.grve-text a,
+.grve-text a:hover,
+.grve-text a:focus,
+.grve-text a:visited,
+.articleBody a,
+.articleBody a:hover,
+.articleBody a:focus,
+.articleBody a:visited {
 	text-decoration: underline;
 }
 
@@ -120,7 +124,7 @@ a:visited {
 ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║   ██║       ██╔═══╝ ██╔══██║██║   ██║██╔══╝  ╚════██║
 ███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║       ██║     ██║  ██║╚██████╔╝███████╗███████║
 ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝
-                                                                                         
+
 */
 
 #main-content {
