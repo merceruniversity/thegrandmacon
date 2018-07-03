@@ -1,0 +1,104 @@
+{
+    "width": 1120,
+    "height": 1120,
+    "file": "2000\/01\/grve-dummy-sample-image-large.png",
+    "sizes": {
+        "thumbnail": {
+            "file": "grve-dummy-sample-image-large-150x150.png",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image\/png"
+        },
+        "medium": {
+            "file": "grve-dummy-sample-image-large-300x300.png",
+            "width": 300,
+            "height": 300,
+            "mime-type": "image\/png"
+        },
+        "medium_large": {
+            "file": "grve-dummy-sample-image-large-768x768.png",
+            "width": 768,
+            "height": 768,
+            "mime-type": "image\/png"
+        },
+        "large": {
+            "file": "grve-dummy-sample-image-large-1024x1024.png",
+            "width": 1024,
+            "height": 1024,
+            "mime-type": "image\/png"
+        },
+        "shop_thumbnail": {
+            "file": "grve-dummy-sample-image-large-120x120.png",
+            "width": 120,
+            "height": 120,
+            "mime-type": "image\/png"
+        },
+        "shop_catalog": {
+            "file": "grve-dummy-sample-image-large-500x500.png",
+            "width": 500,
+            "height": 500,
+            "mime-type": "image\/png"
+        },
+        "shop_single": {
+            "file": "grve-dummy-sample-image-large-800x800.png",
+            "width": 800,
+            "height": 800,
+            "mime-type": "image\/png"
+        },
+        "movedo-grve-large-rect-horizontal": {
+            "file": "grve-dummy-sample-image-large-1120x658.png",
+            "width": 1120,
+            "height": 658,
+            "mime-type": "image\/png"
+        },
+        "movedo-grve-small-square": {
+            "file": "grve-dummy-sample-image-large-560x560.png",
+            "width": 560,
+            "height": 560,
+            "mime-type": "image\/png"
+        },
+        "movedo-grve-small-rect-horizontal": {
+            "file": "grve-dummy-sample-image-large-560x420.png",
+            "width":560,
+            "height": 420,
+            "mime-type": "image\/png"
+        },
+        "movedo-grve-small-rect-vertical": {
+            "file": "grve-dummy-sample-image-large-560x747.png",
+            "width": 560,
+            "height": 747,
+            "mime-type": "image\/png"
+        },
+        "movedo-grve-medium-square": {
+            "file": "grve-dummy-sample-image-large-900x900.png",
+            "width": 900,
+            "height": 900,
+            "mime-type": "image\/png"
+        },
+        "movedo-grve-medium-rect-horizontal": {
+            "file": "grve-dummy-sample-image-large-900x675.png",
+            "width": 900,
+            "height": 675,
+            "mime-type": "image\/png"
+        },
+        "movedo-grve-medium-rect-vertical": {
+            "file": "grve-dummy-sample-image-large-840x1120.png",
+            "width": 840,
+            "height": 1120,
+            "mime-type": "image\/png"
+        }
+    },
+    "image_meta": {
+        "aperture": 0,
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": 0,
+        "copyright": "",
+        "focal_length": 0,
+        "iso": 0,
+        "shutter_speed": 0,
+        "title": "",
+        "orientation": 0
+    }
+}

@@ -1,0 +1,468 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Movedo Dummy Importer v2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-08-23 20:33:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Textdomain-Support: yes\n"
+"Language: en_US\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: movedo-dummy-importer.php:90
+msgid ""
+"You are about to import dummy data!\n"
+"It is recommended to clear your data first.\n"
+"\n"
+"Do you want to continue?"
+msgstr ""
+
+#: movedo-dummy-importer.php:91
+msgid ""
+"You are about to import partial dummy data!\n"
+"\n"
+"Do you want to continue?"
+msgstr ""
+
+#: movedo-dummy-importer.php:117
+msgid "Several sample pages and layouts to get inspired. Elements are also included here to get a simple understanding of how the theme works."
+msgstr ""
+
+#: movedo-dummy-importer.php:124
+msgid "Recommended for corporate case studies with professional and clean design."
+msgstr ""
+
+#: movedo-dummy-importer.php:131
+msgid "Shop case study with WooCommerce products. Showcase your products and start selling in a few minutes."
+msgstr ""
+
+#: movedo-dummy-importer.php:138
+msgid "Clean and impressive demo, recommended for agencies, graphic and web designers."
+msgstr ""
+
+#: movedo-dummy-importer.php:145
+msgid "One Page case study with dark style and split menu. Design inspiration for freelancers."
+msgstr ""
+
+#: movedo-dummy-importer.php:152
+msgid "Elegant construction case study with professional and clean design."
+msgstr ""
+
+#: movedo-dummy-importer.php:159
+msgid "Unique style to share your most memorable travelling experiences with other bloggers."
+msgstr ""
+
+#: movedo-dummy-importer.php:166
+msgid "Inspirational and creative personal case study."
+msgstr ""
+
+#: movedo-dummy-importer.php:173
+msgid "Professional and clean design combined with the hottest web trends."
+msgstr ""
+
+#: movedo-dummy-importer.php:180
+msgid "Business and minimal style, recommended for hosting companies and resellers."
+msgstr ""
+
+#: movedo-dummy-importer.php:187
+msgid "Are you a Blogger? If you publish regularly, you will love Movedo Blog."
+msgstr ""
+
+#: movedo-dummy-importer.php:194
+msgid "Another handcrafted one-page case study, not just for startups."
+msgstr ""
+
+#: movedo-dummy-importer.php:242
+msgid "Single Content: File empty ot not existing!"
+msgstr ""
+
+#: movedo-dummy-importer.php:286
+msgid "Single Content: Error During Import!"
+msgstr ""
+
+#: movedo-dummy-importer.php:289
+msgid "Single Content: imported!"
+msgstr ""
+
+#: movedo-dummy-importer.php:308
+msgid "Dummy Content: File empty ot not existing!"
+msgstr ""
+
+#: movedo-dummy-importer.php:321
+msgid "Dummy Content: Error During Import!"
+msgstr ""
+
+#: movedo-dummy-importer.php:382
+msgid "Dummy Content: imported!"
+msgstr ""
+
+#: movedo-dummy-importer.php:394
+msgid "Theme Options: file empty ot not existing!"
+msgstr ""
+
+#: movedo-dummy-importer.php:398
+msgid "Theme Options: imported!"
+msgstr ""
+
+#: movedo-dummy-importer.php:409
+msgid "Widgets: no widgets available for this Demo!"
+msgstr ""
+
+#: movedo-dummy-importer.php:413
+msgid "Widgets: imported!"
+msgstr ""
+
+#: movedo-dummy-importer.php:422
+msgid "Import finished!"
+msgstr ""
+
+#: movedo-dummy-importer.php:423 movedo-dummy-importer.php:432
+msgid "Visit Site"
+msgstr ""
+
+#: movedo-dummy-importer.php:426
+msgid "No options selected, please select some options and press the import button!"
+msgstr ""
+
+#: movedo-dummy-importer.php:431
+msgid "Import finished with errors!"
+msgstr ""
+
+#: movedo-dummy-importer.php:438
+msgid "The minimum PHP version required for the Dummy Importer is:"
+msgstr ""
+
+#: movedo-dummy-importer.php:443
+msgid "Movedo Theme is not activated! Movedo Theme needs to be installed and activated!"
+msgstr ""
+
+#: movedo-dummy-importer.php:778 movedo-dummy-importer.php:787
+#: movedo-dummy-importer.php:815 movedo-dummy-importer.php:824
+#: movedo-dummy-importer.php:1080 movedo-dummy-importer.php:1084
+#: movedo-dummy-importer.php:1093
+msgid "Sorry, there has been an error."
+msgstr ""
+
+#: movedo-dummy-importer.php:779 movedo-dummy-importer.php:816
+msgid "The file/demo does not exist, please try again."
+msgstr ""
+
+#: movedo-dummy-importer.php:976
+msgid "Pages"
+msgstr ""
+
+#: movedo-dummy-importer.php:991
+msgid "Portfolio Items"
+msgstr ""
+
+#: movedo-dummy-importer.php:1006
+msgid "Posts"
+msgstr ""
+
+#: movedo-dummy-importer.php:1021
+msgid "Products"
+msgstr ""
+
+#: movedo-dummy-importer.php:1036
+msgid "Area Items"
+msgstr ""
+
+#: movedo-dummy-importer.php:1085
+#, php-format
+msgid "The export file could not be found at <code>%s</code>. It is likely that this was caused by a permissions problem."
+msgstr ""
+
+#: movedo-dummy-importer.php:1101
+#, php-format
+msgid "This WXR file (version %s) may not be supported by this version of the importer. Please consider updating."
+msgstr ""
+
+#: movedo-dummy-importer.php:1126
+#, php-format
+msgid "Failed to import author %s. Their posts will be attributed to the current user."
+msgstr ""
+
+#: movedo-dummy-importer.php:1177
+#, php-format
+msgid "Failed to import category %s"
+msgstr ""
+
+#: movedo-dummy-importer.php:1218
+#, php-format
+msgid "Failed to import post tag %s"
+msgstr ""
+
+#: movedo-dummy-importer.php:1267 movedo-dummy-importer.php:1529
+#, php-format
+msgid "Failed to import %s %s"
+msgstr ""
+
+#: movedo-dummy-importer.php:1355
+#, php-format
+msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
+msgstr ""
+
+#: movedo-dummy-importer.php:1381
+#, php-format
+msgid "%s &#8220;%s&#8221; already exists."
+msgstr ""
+
+#: movedo-dummy-importer.php:1494
+#, php-format
+msgid "Failed to import %s &#8220;%s&#8221;"
+msgstr ""
+
+#: movedo-dummy-importer.php:1661
+msgid "Menu item skipped due to missing menu slug"
+msgstr ""
+
+#: movedo-dummy-importer.php:1670
+#, php-format
+msgid "Menu item skipped due to invalid menu slug: %s"
+msgstr ""
+
+#: movedo-dummy-importer.php:1751
+msgid "Fetching attachments is not enabled"
+msgstr ""
+
+#: movedo-dummy-importer.php:1768
+msgid "Invalid file type"
+msgstr ""
+
+#: movedo-dummy-importer.php:1837
+msgid "Remote server did not respond"
+msgstr ""
+
+#: movedo-dummy-importer.php:1843
+#, php-format
+msgid "Remote server returned error response %1$d %2$s"
+msgstr ""
+
+#: movedo-dummy-importer.php:1855
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: movedo-dummy-importer.php:1861
+#, php-format
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: movedo-dummy-importer.php:2014
+msgid "Welcome"
+msgstr ""
+
+#: movedo-dummy-importer.php:2015
+msgid "Demos"
+msgstr ""
+
+#: movedo-dummy-importer.php:2016
+msgid "Content"
+msgstr ""
+
+#: movedo-dummy-importer.php:2017
+msgid "Finish"
+msgstr ""
+
+#: movedo-dummy-importer.php:2036
+msgid "Please note the following points:"
+msgstr ""
+
+#: movedo-dummy-importer.php:2038
+msgid "The import process will work best on a clean installation. You can use a plugin such as WordPress Reset to clear your data first."
+msgstr ""
+
+#: movedo-dummy-importer.php:2039
+msgid "Ensure all needed plugins are already installed and activated, e.g. WPBakery Visual Composer, Movedo Extension, WooCommerce, Contact Form 7 etc."
+msgstr ""
+
+#: movedo-dummy-importer.php:2040
+msgid "To import one of our Demos, select all or some of the options of any demo and press the import button."
+msgstr ""
+
+#: movedo-dummy-importer.php:2041
+msgid "Keep in mind not to run importer twice without clearing your data first. You might end up with duplicate data e.g duplicate menu items and/or widgets."
+msgstr ""
+
+#: movedo-dummy-importer.php:2042
+msgid "Once you start the process, please leave it running and uninterrupted! After the import, a status will be displayed with the results!"
+msgstr ""
+
+#: movedo-dummy-importer.php:2048
+msgid "The normal operation time for the Import Full Demo mechanism is less than 3 minutes. For the Import On Demand process only a few seconds will be enough. Actual time may vary depending on your server performance. In case any of the import mechanisms is not successful, please inform us through our support forum to guide you through safely."
+msgstr ""
+
+#: movedo-dummy-importer.php:2050
+msgid "It is always recommended to use the Import On Demand process. In combination with the Content Manager feature, Import On Demand is the fastest way to get a simple understanding of how the theme works and demonstrate in a few minutes your work to your customers."
+msgstr ""
+
+#: movedo-dummy-importer.php:2054
+msgid "The images included in preview are for demonstration purposes only. Some of them have been purchased from Shutter Stock and others were downloaded from Unsplash, Death To Stock and similar sources. It is worth noting that after the import process, you will have placeholders instead of the actual images."
+msgstr ""
+
+#: movedo-dummy-importer.php:2058 movedo-dummy-importer.php:2192
+msgid "Choose Demo"
+msgstr ""
+
+#: movedo-dummy-importer.php:2066
+msgid "Server Settings"
+msgstr ""
+
+#: movedo-dummy-importer.php:2088
+msgid "PHP Version"
+msgstr ""
+
+#: movedo-dummy-importer.php:2101 movedo-dummy-importer.php:2122
+#: movedo-dummy-importer.php:2142 movedo-dummy-importer.php:2162
+#: movedo-dummy-importer.php:2182
+msgid "Currently:"
+msgstr ""
+
+#: movedo-dummy-importer.php:2104
+msgid "(recommended PHP 5.6 or higher)"
+msgstr ""
+
+#: movedo-dummy-importer.php:2109
+msgid "PHP Memory Limit"
+msgstr ""
+
+#: movedo-dummy-importer.php:2125
+msgid "(min:256M)"
+msgstr ""
+
+#: movedo-dummy-importer.php:2130
+msgid "PHP Max. Post Size"
+msgstr ""
+
+#: movedo-dummy-importer.php:2145
+msgid "(min:64M)"
+msgstr ""
+
+#: movedo-dummy-importer.php:2150
+msgid "PHP Upload Max. Filesize"
+msgstr ""
+
+#: movedo-dummy-importer.php:2165
+msgid "(min:32M)"
+msgstr ""
+
+#: movedo-dummy-importer.php:2170
+msgid "WP Memory Limit"
+msgstr ""
+
+#: movedo-dummy-importer.php:2185
+msgid "(recommended 96M or higher)"
+msgstr ""
+
+#: movedo-dummy-importer.php:2191
+msgid "Recommended Server Settings"
+msgstr ""
+
+#: movedo-dummy-importer.php:2218
+msgid "Select your Demo"
+msgstr ""
+
+#: movedo-dummy-importer.php:2219
+msgid "Here you can select the demo of your choice. Nothing will be imported in your installation after clicking any button on this step. Just select one of the available demos, explore and then import any specific content you wish."
+msgstr ""
+
+#: movedo-dummy-importer.php:2235
+msgid "Preview Demo"
+msgstr ""
+
+#: movedo-dummy-importer.php:2236
+msgid "Explore Demo"
+msgstr ""
+
+#: movedo-dummy-importer.php:2285
+msgid "Import in progress..."
+msgstr ""
+
+#: movedo-dummy-importer.php:2286
+msgid "Don't close the browser or navigate away"
+msgstr ""
+
+#: movedo-dummy-importer.php:2299
+msgid "Import On Demand"
+msgstr ""
+
+#: movedo-dummy-importer.php:2300
+msgid "Choose the specific pages, portfolios, posts and products you wish to import into your site. Select the ones you prefer via the available multi selectors below and click the button Import Selected."
+msgstr ""
+
+#: movedo-dummy-importer.php:2307
+msgid "You can select/deselect multiple items too (ctrl + click on PC and command + click on Mac)."
+msgstr ""
+
+#: movedo-dummy-importer.php:2311 movedo-dummy-importer.php:2339
+msgid "Download images from live demo *"
+msgstr ""
+
+#: movedo-dummy-importer.php:2314 movedo-dummy-importer.php:2342
+msgid "Important Note: "
+msgstr ""
+
+#: movedo-dummy-importer.php:2316 movedo-dummy-importer.php:2344
+msgid "The actual images included in preview are for demonstration purposes only. They have been purchased from Shutterstock and/or downloaded from Unsplash, Death to Stock and similar sources. In case you use any of these images in your end-product, ensure that they are properly licensed. Greatives does not transfer any licenses for the images used in the demo sites."
+msgstr ""
+
+#: movedo-dummy-importer.php:2319
+msgid "Clear Selection"
+msgstr ""
+
+#: movedo-dummy-importer.php:2320
+msgid "Import Selected"
+msgstr ""
+
+#: movedo-dummy-importer.php:2324 movedo-dummy-importer.php:2348
+msgid "Import Full Demo"
+msgstr ""
+
+#: movedo-dummy-importer.php:2325
+msgid "The import process will work best on a clean installation. You can use a plugin such as WordPress Reset to clear your data first. The import process will work best on a clean installation. You can use a plugin such as WordPress Reset to clear your data first"
+msgstr ""
+
+#: movedo-dummy-importer.php:2329
+msgid "Dummy Content"
+msgstr ""
+
+#: movedo-dummy-importer.php:2332
+msgid "Theme Options"
+msgstr ""
+
+#: movedo-dummy-importer.php:2335
+msgid "Widgets"
+msgstr ""
+
+#: movedo-dummy-importer.php:2371
+msgid "Import Completed!"
+msgstr ""
+
+#: movedo-dummy-importer.php:2373
+msgid "Visit Your Site"
+msgstr ""
+
+#: movedo-dummy-importer.php:2447
+msgid "Import Movedo Demos, Dummy Content, Theme Options and Widgets."
+msgstr ""
+
+#: parsers.php:42 parsers.php:72 parsers.php:80
+msgid "There was an error when reading this WXR file"
+msgstr ""
+
+#: parsers.php:43
+msgid "Details are shown above. The importer will now try again with a different parser..."
+msgstr ""
+
+#: parsers.php:84 parsers.php:89 parsers.php:306 parsers.php:499
+msgid "This does not appear to be a WXR file, missing/invalid WXR version number"
+msgstr ""

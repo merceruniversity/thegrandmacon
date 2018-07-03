@@ -1,0 +1,57 @@
+[
+	{
+		"movedo_grve_sidebar_59f0532d5f5a8": [
+			"grve-widget-latest-posts-2"
+		],
+		"movedo_grve_sidebar_59f05338bffcf": [
+			"text-2"
+		],
+		"movedo_grve_sidebar_59f0534161e26": [
+			"text-3"
+		],
+		"movedo_grve_sidebar_59f053498c941": [
+			"text-4"
+		],
+		"movedo_grve_sidebar_59f053514d080": [
+			"text-5"
+		]
+	},
+	{
+		"grve-widget-latest-posts": {
+			"2": {
+				"title": "Latest News",
+				"num_of_posts": "3",
+				"show_image": "1",
+				"categories": null
+			},
+			"_multiwidget": 1
+		},
+		"text": {
+			"2": {
+				"title": "Action",
+				"text": "<a href=\"#\">Trail</a>\r\n<a href=\"#\">Mountain</a>\r\n<a href=\"#\">Sky</a>\r\n<a href=\"#\">Extreme</a>\r\n<a href=\"#\">Multisports</a>\r\n<a href=\"#\">Road</a>",
+				"filter": true,
+				"visual": true
+			},
+			"3": {
+				"title": "Destinations",
+				"text": "<a href=\"#\">Mountain</a>\r\n<a href=\"#\">Sea</a>\r\n<a href=\"#\">Desert</a>\r\n<a href=\"#\">River</a>",
+				"filter": true,
+				"visual": true
+			},
+			"4": {
+				"title": "COMPETITION",
+				"text": "<a href=\"#\">Diet</a>\r\n<a href=\"#\">Training</a>\r\n<a href=\"#\">Ask Coach</a>\r\n<a href=\"#\">Medical</a>\r\n<a href=\"#\">Theory</a>\r\n<a href=\"#\">Physiology</a>",
+				"filter": true,
+				"visual": true
+			},
+			"5": {
+				"title": "equipment",
+				"text": "<a href=\"#\">Clothes</a>\r\n<a href=\"#\">Shoes</a>\r\n<a href=\"#\">Backpacks</a>\r\n<a href=\"#\">Difference</a>",
+				"filter": true,
+				"visual": true
+			},
+			"_multiwidget": 1
+		}
+	}
+]

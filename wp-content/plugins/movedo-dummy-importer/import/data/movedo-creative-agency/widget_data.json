@@ -1,0 +1,42 @@
+[
+	{
+		"grve-footer-1-sidebar": [
+			"nav_menu-2"
+		],
+		"grve-footer-2-sidebar": [
+			"nav_menu-5"
+		],
+		"grve-footer-3-sidebar": [
+			"nav_menu-6"
+		],
+		"grve-footer-4-sidebar": [
+			"text-2"
+		]
+	},
+	{
+		"nav_menu": {
+			"2": {
+				"title": "Who we are",
+				"nav_menu": 2
+			},
+			"5": {
+				"title": "Support",
+				"nav_menu": 3
+			},
+			"6": {
+				"title": "Follow Us",
+				"nav_menu": 4
+			},
+			"_multiwidget": 1
+		},
+		"text": {
+			"2": {
+				"title": "Stay Connected",
+				"text": "<a href=\"#\">themes@greatives.eu</a>\r\n44 Oxford Street\r\nLondon, UK 22004\r\nTel. +380 22 333 555",
+				"filter": true,
+				"visual": true
+			},
+			"_multiwidget": 1
+		}
+	}
+]

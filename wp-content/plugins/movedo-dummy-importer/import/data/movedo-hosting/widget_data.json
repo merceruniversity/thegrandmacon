@@ -1,0 +1,36 @@
+[
+	{
+		"grve-footer-1-sidebar": [
+			"text-2"
+		],
+		"grve-footer-2-sidebar": [
+			"text-3"
+		],
+		"grve-footer-3-sidebar": [
+			"text-4"
+		]
+	},
+	{
+		"text": {
+			"2": {
+				"title": "Movedo Hosting",
+				"text": "For science, music, sport, etc, Europe uses the same vocabulary.\r\n\r\nThe languages only differ in their grammar their pronunciation And their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words.",
+				"filter": true,
+				"visual": true
+			},
+			"3": {
+				"title": "New York",
+				"text": "709 Honey Creek Dr.\r\nNew York\r\nNY 10028\r\n\r\n1-888-299-2000\r\n<a href=\"mailto:newyork@movedo.com\">newyork@movedo.com</a>",
+				"filter": true,
+				"visual": true
+			},
+			"4": {
+				"title": "London",
+				"text": "4851 Willow Greene Drive\r\nMontgomery\r\nAL 36109\r\n\r\n1-888-299-2000\r\n<a href=\"mailto:uk@movedo.com\">uk@movedo.com</a>",
+				"filter": true,
+				"visual": true
+			},
+			"_multiwidget": 1
+		}
+	}
+]

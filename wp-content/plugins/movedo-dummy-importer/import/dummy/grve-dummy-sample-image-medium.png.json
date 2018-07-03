@@ -1,0 +1,38 @@
+{
+    "width": 400,
+    "height": 400,
+    "file": "2000\/01\/grve-dummy-sample-image-medium.png",
+    "sizes": {
+        "thumbnail": {
+            "file": "grve-dummy-sample-image-medium-150x150.png",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image\/png"
+        },
+        "medium": {
+            "file": "grve-dummy-sample-image-medium-300x300.png",
+            "width": 300,
+            "height": 300,
+            "mime-type": "image\/png"
+        },
+        "shop_thumbnail": {
+            "file": "grve-dummy-sample-image-medium-120x120.png",
+            "width": 120,
+            "height": 120,
+            "mime-type": "image\/png"
+        }
+    },
+    "image_meta": {
+        "aperture": 0,
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": 0,
+        "copyright": "",
+        "focal_length": 0,
+        "iso": 0,
+        "shutter_speed": 0,
+        "title": "",
+        "orientation": 0
+    }
+}

@@ -1,0 +1,81 @@
+/*
+Theme Name:   Movedo Child GOH
+Theme URI:    https://github.com/merceruniversity/thegrandmacon
+Description:  Movedo Child Theme for The Grand Opera House
+Version:      2.2.2
+Author:       Digital Communications
+Author URI:   http://www.mercer.edu/digicomm
+Template:     movedo
+*/
+
+/*
+ * goldenrod: #ebae36
+ * red:       #d2232a
+ * dark grey: #2a2629
+ * grey:      #696769
+ */
+
+/*
+
+██╗███╗   ██╗███████╗████████╗ █████╗  ██████╗ ██████╗  █████╗ ███╗   ███╗
+██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██╔════╝ ██╔══██╗██╔══██╗████╗ ████║
+██║██╔██╗ ██║███████╗   ██║   ███████║██║  ███╗██████╔╝███████║██╔████╔██║
+██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║   ██║██╔══██╗██╔══██║██║╚██╔╝██║
+██║██║ ╚████║███████║   ██║   ██║  ██║╚██████╔╝██║  ██║██║  ██║██║ ╚═╝ ██║
+╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝
+
+*/
+
+#sb_instagram .sbi_photo {
+    border: 5px solid #fff;
+}
+
+#sb_instagram .sbi_follow_btn a {
+    border: 1px solid #ebae36;
+    /* Original padding: 7px 14px */
+    /* Subtracted 2 from each value for the border */
+    padding: 5px 12px;
+}
+
+/*
+
+███████╗██╗  ██╗███████╗██╗    ██╗███████╗██████╗     ██████╗  █████╗  ██████╗██╗  ██╗ ██████╗ ██████╗  ██████╗ ██╗   ██╗███╗   ██╗██████╗ 
+██╔════╝██║ ██╔╝██╔════╝██║    ██║██╔════╝██╔══██╗    ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔════╝ ██╔══██╗██╔═══██╗██║   ██║████╗  ██║██╔══██╗
+███████╗█████╔╝ █████╗  ██║ █╗ ██║█████╗  ██║  ██║    ██████╔╝███████║██║     █████╔╝ ██║  ███╗██████╔╝██║   ██║██║   ██║██╔██╗ ██║██║  ██║
+╚════██║██╔═██╗ ██╔══╝  ██║███╗██║██╔══╝  ██║  ██║    ██╔══██╗██╔══██║██║     ██╔═██╗ ██║   ██║██╔══██╗██║   ██║██║   ██║██║╚██╗██║██║  ██║
+███████║██║  ██╗███████╗╚███╔███╔╝███████╗██████╔╝    ██████╔╝██║  ██║╚██████╗██║  ██╗╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║ ╚████║██████╔╝
+╚══════╝╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚═════╝     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚═════╝ 
+
+*/
+
+.skewed-background {
+    height: 100%;
+    position: relative;
+}
+
+.skewed-background::before {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px, rgba(0, 0, 0, 0.3) -1px -3px 2px;
+    content: '';
+    display: block;
+    height: calc(100% + 100px);
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: skew(0, 10deg) translate(0, -50%);
+    width: 100%;
+    z-index: -1;
+}
+
+.skewed-background h2 {
+    border-bottom: 5px solid #d2232a;
+    max-width: 70%;
+    padding-bottom: 1rem;
+}
+
+.skewed-background a {
+    display: inline-block;
+    color: #d2232a;
+    border: 1px solid #d2232a;
+    padding: 0.2rem 0.5rem;
+}

@@ -1,0 +1,639 @@
+/**
+ * Visual Composer Items
+ */
+
+.vc_ui-panel-header-container {
+	background: #3f3f3f !important;
+}
+
+.vc_row .vc_controls > .vc_controls-cc {
+	background-color: #3f3f3f;
+	border-radius: 0;
+}
+
+.vc_row .vc_child-element-move .vc_btn-content:hover,
+.vc_row .vc_element-move .vc_btn-content:hover,
+.vc_row .vc_control-btn .vc_btn-content:hover {
+	background-color: #000000;
+}
+
+.vc_element-icon[data-is-container="true"] {
+	background-position: 0 center !important;
+}
+
+/* Row */
+.vc_element-icon.icon-wpb-row[data-is-container="true"],
+.vc_element-icon.icon-wpb-row  {
+	background-image: url(../images/elements_icons/section.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+/* Tabs */
+.vc_element-icon.icon-wpb-ui-tab-content[data-is-container="true"],
+.vc_element-icon.icon-wpb-ui-tab-content,
+.vc_element-icon.icon-wpb-ui-tab-content-vertical[data-is-container="true"],
+.vc_element-icon.icon-wpb-ui-tab-content-vertical {
+	background-image: url(../images/elements_icons/tab.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+/* Accordion */
+.vc_element-icon.icon-wpb-ui-accordion[data-is-container="true"],
+.vc_element-icon.icon-wpb-ui-accordion {
+	background-image: url(../images/elements_icons/accordion.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+/* Text Block */
+.vc_element-icon.icon-wpb-layer-shape-text {
+	background-image: url(../images/elements_icons/text.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+/* Sidebar */
+.vc_element-icon.icon-wpb-layout_sidebar {
+	background-image: url(../images/elements_icons/sidebar.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+/* Html */
+.vc_element-icon.icon-wpb-raw-html {
+	background-image: url(../images/elements_icons/html.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+/* Js */
+.vc_element-icon.icon-wpb-raw-javascript {
+	background-image: url(../images/elements_icons/js.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+/* Form */
+.vc_element-icon.icon-wpb-contactform7 {
+	background-image: url(../images/elements_icons/form.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+/* Search */
+.vc_element-icon.icon-wpb-grve-search,
+.vc_element-icon.icon-wpb-wp {
+	background-image: url(../images/elements_icons/search.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+/* Empty Space */
+.vc_element-icon.icon-wpb-ui-empty_space,
+.vc_element-icon.icon-wpb-grve-empty-space {
+	background-image: url(../images/elements_icons/empty-space.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Custom Heading */
+.vc_element-icon.icon-wpb-ui-custom_heading {
+	background-image: url(../images/elements_icons/custom-heading.png);
+	background-position: 0 center;
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+ /**
+ * Visual Composer Icons
+ */
+
+ /* Icon Box */
+.vc_element-icon.icon-wpb-grve-icon {
+	background-image: url(../images/elements_icons/icon.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Icon Box */
+.vc_element-icon.icon-wpb-grve-icon-box {
+	background-image: url(../images/elements_icons/icon-box.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Title */
+.vc_element-icon.icon-wpb-grve-title {
+	background-image: url(../images/elements_icons/title.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Divider */
+.vc_element-icon.icon-wpb-grve-divider {
+	background-image: url(../images/elements_icons/divider.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Quote */
+.vc_element-icon.icon-wpb-grve-quote {
+	background-image: url(../images/elements_icons/quote.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Dropcap */
+.vc_element-icon.icon-wpb-grve-dropcap {
+	background-image: url(../images/elements_icons/dropcaps.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Slogan */
+.vc_element-icon.icon-wpb-grve-slogan {
+	background-image: url(../images/elements_icons/slogan.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Slider */
+.vc_element-icon.icon-wpb-grve-slider {
+	background-image: url(../images/elements_icons/slider.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Blog */
+.vc_element-icon.icon-wpb-grve-blog {
+	background-image: url(../images/elements_icons/blog.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+.vc_element-icon.icon-wpb-grve-blog-leader {
+	background-image: url(../images/elements_icons/blog-leader.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Portfolio */
+.vc_element-icon.icon-wpb-grve-portfolio {
+	background-image: url(../images/elements_icons/portfolio.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Button */
+.vc_element-icon.icon-wpb-grve-button {
+	background-image: url(../images/elements_icons/buttons.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* List */
+.vc_element-icon.icon-wpb-grve-list {
+	background-image: url(../images/elements_icons/list.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Image Text */
+.vc_element-icon.icon-wpb-grve-image-text {
+	background-image: url(../images/elements_icons/image-text.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Split Content */
+.vc_element-icon.icon-wpb-grve-split-content {
+	background-image: url(../images/elements_icons/split-content.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Media Box */
+.vc_element-icon.icon-wpb-grve-media-box {
+	background-image: url(../images/elements_icons/media-box.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Gallery */
+.vc_element-icon.icon-wpb-grve-gallery {
+	background-image: url(../images/elements_icons/gallery.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Single Image */
+.vc_element-icon.icon-wpb-grve-single-image {
+	background-image: url(../images/elements_icons/image.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Google Map */
+.vc_element-icon.icon-wpb-grve-gmap {
+	background-image: url(../images/elements_icons/map.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Video */
+.vc_element-icon.icon-wpb-grve-video {
+	background-image: url(../images/elements_icons/video.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+
+/* Progress Bars */
+.vc_element-icon.icon-wpb-grve-progress-bar {
+	background-image: url(../images/elements_icons/bars.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Callout */
+.vc_element-icon.icon-wpb-grve-callout {
+	background-image: url(../images/elements_icons/callout.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Message Box */
+.vc_element-icon.icon-wpb-grve-message-box {
+	background-image: url(../images/elements_icons/message-box.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Carousel */
+.vc_element-icon.icon-wpb-grve-carousel {
+	background-image: url(../images/elements_icons/carousel.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Pricing Table */
+.vc_element-icon.icon-wpb-grve-pricing-table {
+	background-image: url(../images/elements_icons/pricing-table.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Typed Text */
+.vc_element-icon.icon-wpb-grve-typed-text {
+	background-image: url(../images/elements_icons/typed-text.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Social */
+.vc_element-icon.icon-wpb-grve-social {
+	background-image: url(../images/elements_icons/social.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Team */
+.vc_element-icon.icon-wpb-grve-team {
+	background-image: url(../images/elements_icons/team.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Promo Advanced */
+.vc_element-icon.icon-wpb-grve-promo {
+	background-image: url(../images/elements_icons/promo.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Testimonial */
+.vc_element-icon.icon-wpb-grve-testimonial {
+	background-image: url(../images/elements_icons/testimonial.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Counter */
+.vc_element-icon.icon-wpb-grve-counter {
+	background-image: url(../images/elements_icons/counter.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Pie Chart */
+.vc_element-icon.icon-wpb-grve-pie-chart {
+	background-image: url(../images/elements_icons/piechart.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Flexible Carousel */
+.vc_element-icon.icon-wpb-grve-flexible-carousel {
+	background-image: url(../images/elements_icons/flexible-carousel.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Countdown */
+.vc_element-icon.icon-wpb-grve-countdown {
+	background-image: url(../images/elements_icons/countdown.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Modals */
+.vc_element-icon.icon-wpb-grve-modal {
+	background-image: url(../images/elements_icons/modals.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Product */
+.vc_element-icon.icon-wpb-grve-product {
+	background-image: url(../images/elements_icons/product.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Slider Content */
+.vc_element-icon.icon-wpb-grve-content-slider {
+	background-image: url(../images/elements_icons/slider-content.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Portfolio Parallax */
+.vc_element-icon.icon-wpb-grve-portfolio-parallax {
+	background-image: url(../images/elements_icons/portfolio-parallax.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Double Image Text */
+.vc_element-icon.icon-wpb-grve-double-image-text {
+	background-image: url(../images/elements_icons/double-image-text.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Language Selector */
+.vc_element-icon.icon-wpb-grve-languages {
+	background-image: url(../images/elements_icons/languages.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Instagram */
+.vc_element-icon.icon-wpb-grve-instagram {
+	background-image: url(../images/elements_icons/instagram.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Events */
+.vc_element-icon.icon-wpb-grve-event {
+	background-image: url(../images/elements_icons/events-calendar.png);
+	background-color: #3f3f3f;
+	background-size: cover;
+}
+
+/* Window Style */
+.vc_element_label,
+.wpb_element_label {
+	color: #000000;
+}
+
+.vc_edit_form_elements .vc_column+.vc_column,
+.vc_edit_form_elements .vc_column-with-padding {
+    padding-top: 45px !important;
+}
+
+.vc_edit-form-tab {
+	padding: 45px 30px !important;
+}
+
+.vc_panel-tabs .vc_row {
+	margin-left: -30px !important;
+	margin-right: -30px !important;
+}
+
+.vc_ui-panel-content {
+	padding: 0 30px !important;
+}
+
+.vc_panel-tabs .vc_description {
+	font-style: normal !important;
+	font-size: 12px;
+}
+
+.wpb_element_label {
+	margin-bottom: 10px !important;
+}
+
+/* Template Library */
+.vc_templates-button {
+	background-color: #00aeee !important;
+}
+.vc_templates-button .vc-c-icon-add_template {
+	color: #ffffff !important;
+}
+
+.grve-templates-content {
+	flex-grow: 1;
+	margin: -23px -3px -18px -3px;
+    background-color: #2C2C2C;
+}
+.grve-template-filters {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 100;
+    padding: 18px;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 250px;
+	visibility: hidden;
+}
+
+.vc_templates-panel button[data-vc-ui-element-target="[data-tab=movedo_templates]"] {
+	width: 200px;
+	text-align: center !important;
+}
+.vc_templates-panel.vc_active .vc_edit-form-tab.vc_active[data-tab="movedo_templates"] .grve-template-filters {
+	visibility: visible;
+}
+
+.grve-template-filters li {
+	cursor: pointer;
+	color: #BFBFBF;
+	position: relative ;
+	padding: 0px 0px;
+	margin-bottom: 12px;
+	-webkit-transition : all .3s;
+	-moz-transition    : all .3s;
+	-ms-transition     : all .3s;
+	-o-transition      : all .3s;
+	transition         : all .3s;
+}
+
+.grve-template-filters li .grve-count {
+	float: right;
+	padding: 4px 8px;
+	font-size: 11px;
+	line-height: 11px;
+	color: #9A9A9A;
+	background-color: #E3E3E3;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	min-width: 8px;
+	text-align: center;
+}
+
+.grve-template-filters li.active {
+	color: #5E5E5E;
+}
+
+.grve-template-filters li.active .grve-count {
+	color: #fff;
+	background-color: #00C484;
+}
+
+.grve-template-filters li:not(.active):hover {
+	color: #000;
+}
+
+#grve-template-item-grid {
+	padding: 30px 30px 30px 265px;
+	height: 1024px;
+	max-height: 60vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#grve-template-item-grid .vc_ui-template-list.vc_ui-list-bar {
+	margin: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.grve-template-item {
+	width: 33.33333333%;
+	max-width: 580px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+}
+
+.grve-template-item  img {
+	max-width: 100%;
+}
+
+.grve-template-item .grve-template-item-inner {
+	padding: 5%;
+}
+
+.grve-template-item .grve-template-load-button {
+	position: relative;
+	padding: 0 !important;
+	background-color: #3F3F3F;
+	color: #9B9B9B !important;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	overflow: hidden;
+	-webkit-transition : all .3s !important;
+	-moz-transition    : all .3s !important;
+	-ms-transition     : all .3s !important;
+	-o-transition      : all .3s !important;
+	transition         : all .3s !important;
+	-webkit-transform: translateY(0);
+	-moz-transform:    translateY(0);
+	-ms-transform:     translateY(0);
+	-o-transform:      translateY(0);
+	transform:         translateY(0);
+	-webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.25);
+}
+
+.grve-template-item .grve-template-load-button:hover {
+	background-color: #3F3F3F !important;
+	color: #ffffff !important;
+	-webkit-transform: translateY(-10px);
+	-moz-transform:    translateY(-10px);
+	-ms-transform:     translateY(-10px);
+	-o-transform:      translateY(-10px);
+	transform:         translateY(-10px);
+	-webkit-box-shadow: 0px 10px 50px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 10px 50px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 10px 50px 0px rgba(0,0,0,0.5);
+}
+
+.grve-template-content {
+	padding: 30px;
+}
+
+.grve-template-content:before,
+.grve-template-content:after {
+	display: table;
+	content: " ";
+}
+.grve-template-content:after {
+	clear: both;
+}
+
+.grve-template-label {
+	float: left;
+	line-height: 30px;
+}
+
+.grve-template-button {
+	color: #7C7C7C;
+	background-color: #2C2C2C;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1em;
+	padding: 8px 18px;
+	float: right;
+	-webkit-transition : all .3s;
+	-moz-transition    : all .3s;
+	-ms-transition     : all .3s;
+	-o-transition      : all .3s;
+	transition         : all .3s;
+}
+
+.grve-template-item .grve-template-load-button:hover .grve-template-button {
+	color: #ffffff;
+	background-color: #00C484;
+}
+
+@media only screen and (max-width: 1600px) {
+	.grve-template-item {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.grve-template-item {
+		width: 100%;
+	}
+}
+

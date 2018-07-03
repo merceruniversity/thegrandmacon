@@ -1,0 +1,18 @@
+[
+	{
+		"grve-footer-1-sidebar": [
+			"text-2"
+		]
+	},
+	{
+		"text": {
+			"2": {
+				"title": "",
+				"text": "[movedo_single_image image_type=\"image-link\" image=\"74\" retina_image=\"75\" link=\"url:%23grve-goto-header|||\" margin_bottom=\"18\"][movedo_title heading=\"h6\" align=\"center\"]High Quality Theme[/movedo_title]",
+				"filter": true,
+				"visual": true
+			},
+			"_multiwidget": 1
+		}
+	}
+]
