@@ -43,10 +43,10 @@ Template:     movedo
 .grve-text a:hover,
 .grve-text a:focus,
 .grve-text a:visited,
-.articleBody a,
-.articleBody a:hover,
-.articleBody a:focus,
-.articleBody a:visited {
+.post a,
+.post a:hover,
+.post a:focus,
+.post a:visited {
 	text-decoration: underline;
 }
 
