@@ -179,6 +179,8 @@ Template:     movedo
 
 */
 
+/* Carcoal Background */
+
 .row--charcoal .grve-background-wrapper {
     background-color: #2a2629;
 }
@@ -195,6 +197,35 @@ Template:     movedo
     height: 5px;
     margin-top: 1rem;
     max-width: 33%;
+}
+
+/* Skewed Background */
+
+.row--skewed-background .grve-background-wrapper::before,
+.row--skewed-background .grve-background-wrapper::after {
+    background-color: #fff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    transform: skew(0, 10deg);
+}
+
+.row--skewed-background .grve-background-wrapper::before {
+    left: 0;
+    top: -80%;
+    z-index: 1;
+}
+
+.row--skewed-background .grve-background-wrapper::after {
+    top: 80%;
+    right: 0;
+    z-index: 1;
+}
+
+.row--skewed-background .grve-container {
+    z-index: 2;
 }
 
 /*
