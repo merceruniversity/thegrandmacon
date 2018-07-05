@@ -58,10 +58,10 @@ Template:     movedo
 .grve-text a:hover,
 .grve-text a:focus,
 .grve-text a:visited,
-.post a,
-.post a:hover,
-.post a:focus,
-.post a:visited {
+.post div[itemprop="articleBody"] a,
+.post div[itemprop="articleBody"] a:hover,
+.post div[itemprop="articleBody"] a:focus,
+.post div[itemprop="articleBody"] a:visited {
 	text-decoration: underline;
 }
 
@@ -242,7 +242,7 @@ footer .menu > .menu-item {
     background-color: #fff;
     border: 1px solid #C4C4C4;
     box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .grve-column.box .grve-column-wrapper .grve-title {
