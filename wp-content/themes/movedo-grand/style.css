@@ -20,10 +20,10 @@ Template:     movedo
  */
 
 /*                                                   
- * goldenrod: #ebae36
- * red:       #d2232a
- * dark grey: #2a2629
- * grey:      #696769
+ * Goldenrod:  #ebae36
+ * Candied Rose: #d2232a
+ * Charcoal:   #2a2629
+ * Grey:       #696769
  */
 
 /*
@@ -151,4 +151,33 @@ Template:     movedo
 #main-content {
     padding-left: 2em;
     padding-right: 2em;
+}
+
+/*
+
+██████╗  ██████╗ ██╗    ██╗███████╗
+██╔══██╗██╔═══██╗██║    ██║██╔════╝
+██████╔╝██║   ██║██║ █╗ ██║███████╗
+██╔══██╗██║   ██║██║███╗██║╚════██║
+██║  ██║╚██████╔╝╚███╔███╔╝███████║
+╚═╝  ╚═╝ ╚═════╝  ╚══╝╚══╝ ╚══════╝
+
+*/
+
+.row--charcoal .grve-background-wrapper {
+    background-color: #2a2629;
+}
+
+.row--charcoal h2 {
+    color: #fff;
+    display: inline-block;
+}
+
+.row--charcoal h2::after {
+    background-color: #ebae36;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: 1rem;
+    max-width: 33%;
 }
