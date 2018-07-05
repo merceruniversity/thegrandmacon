@@ -20,10 +20,10 @@ Template:     movedo
  */
 
 /*                                                   
- * Goldenrod:  #ebae36
+ * Goldenrod:    #ebae36
  * Candied Rose: #d2232a
- * Charcoal:   #2a2629
- * Grey:       #696769
+ * Charcoal:     #2a2629
+ * Grey:         #696769
  */
 
 /*
@@ -199,35 +199,6 @@ Template:     movedo
     max-width: 33%;
 }
 
-/* Skewed Background */
-
-.row--skewed-background .grve-background-wrapper::before,
-.row--skewed-background .grve-background-wrapper::after {
-    background-color: #fff;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    transform: skew(0, 10deg);
-}
-
-.row--skewed-background .grve-background-wrapper::before {
-    left: 0;
-    top: -80%;
-    z-index: 1;
-}
-
-.row--skewed-background .grve-background-wrapper::after {
-    top: 80%;
-    right: 0;
-    z-index: 1;
-}
-
-.row--skewed-background .grve-container {
-    z-index: 2;
-}
-
 /*
 
 ███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗ 
@@ -254,4 +225,35 @@ footer .menu > .menu-item > a {
 
 footer .menu > .menu-item {
     padding-bottom: 2rem;
+}
+
+/*
+
+ ██████╗ ██████╗ ██╗     ██╗   ██╗███╗   ███╗███╗   ██╗███████╗
+██╔════╝██╔═══██╗██║     ██║   ██║████╗ ████║████╗  ██║██╔════╝
+██║     ██║   ██║██║     ██║   ██║██╔████╔██║██╔██╗ ██║███████╗
+██║     ██║   ██║██║     ██║   ██║██║╚██╔╝██║██║╚██╗██║╚════██║
+╚██████╗╚██████╔╝███████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚████║███████║
+ ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══╝╚══════╝
+
+*/
+
+.grve-column.box .grve-column-wrapper {
+    background-color: #fff;
+    border: 1px solid #C4C4C4;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px;
+    padding: 1rem;
+}
+
+.grve-column.box .grve-column-wrapper .grve-title {
+    display: inline-block;
+}
+
+.grve-column.box .grve-column-wrapper .grve-title::after {
+    background-color: #d2232a;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: 1rem;
+    width: 33%;
 }
