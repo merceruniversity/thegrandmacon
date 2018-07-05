@@ -186,9 +186,20 @@ footer .menu > .menu-item {
 .btn.btn {
     display: inline-block;
     border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px;
     border-style: solid;
     padding: 0.5rem 2rem;
     text-decoration: none;
+
+    /* -=-=-=-=-=-=-= */
+    
+    font-family: "Old Standard TT";
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0;
 }
 
 .btn--primary {
@@ -215,7 +226,7 @@ footer .menu > .menu-item {
     text-decoration: none;
 }
 
-.btn--tertiary {
+/* .btn--tertiary {
     background-color: #fff;
     border-color: #d2232a33;
     color: #2a2629;
@@ -226,6 +237,21 @@ footer .menu > .menu-item {
     border-color: #d2232a;
     color: #d2232a;
     text-decoration: none;
+} */
+
+.btn--tertiary.btn--tertiary {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: #d2232a;
+    text-decoration: underline;
+}
+
+.btn--tertiary.btn--tertiary:hover {
+    background-color: transparent;
+    border: none;
+    color: #2a262a;
+    text-decoration: underline;
 }
 
 /*
