@@ -54,11 +54,33 @@ return array('cachebase'=>$cachebase,'tmpdir'=>$tmpdir, 'cachedir'=>$cachedir, '
 # detect external or internal scripts
 function fvm_is_local_domain($src) {
 $locations = array(home_url(), site_url(), network_home_url(), network_site_url());
-foreach ($locations as $l) { 
-	$l = trim(trim(str_ireplace(array('http://', 'https://', 'www.', 'cdn.', 'static.', 'assets.'), '', trim($l)), '/')); 
-	if (stripos($src, $l) === false) { return true; }
-}
-return false;
+
+	# cdn support
+	$fvm_cdn_url = get_option('fastvelocity_min_fvm_cdn_url');
+	$defer_for_pagespeed = get_option('fastvelocity_min_defer_for_pagespeed');
+	$fvm_cdn_force = get_option('fastvelocity_min_fvm_cdn_force');
+	
+	# excluded from cdn because of https://www.chromestatus.com/feature/5718547946799104 (we use document.write to preserve render blocking)
+	if(!empty($fvm_cdn_url) && ($defer_for_pagespeed != true || $fvm_cdn_force != false) ) {
+		array_push($locations, $fvm_cdn_url);
+	}
+	
+	# cleanup locations
+	$locations = array_filter(array_unique($locations));
+
+	# debug
+	$debug = array('src'=>$src, 'fvm_cdn_url'=>$fvm_cdn_url, 'defer_for_pagespeed'=>$defer_for_pagespeed, 'fvm_cdn_force'=>$fvm_cdn_force, 'locations'=>$locations);
+	
+	
+	# external or not?
+	$ret = false;
+	foreach ($locations as $l) { 
+		$l = trim(trim(str_ireplace(array('http://', 'https://', 'www.'), '', trim($l)), '/')); 
+		if (stripos($src, $l) !== false && $ret === false) { $ret = true; }
+	}
+
+# response
+return $ret;
 }
 
 
@@ -255,18 +277,8 @@ return fastvelocity_min_Minify_HTML::minify($html);
 # functions to minify HTML
 function fastvelocity_min_html_compression_finish($html) { return fastvelocity_min_minify_html($html); }
 function fastvelocity_min_html_compression_start() {
-if (fastvelocity_exclude_contents() == true) { return; }
-$use_alt_html_minification = get_option('fastvelocity_min_use_alt_html_minification', '0');
-if($use_alt_html_minification == '1') { ob_start('fastvelocity_min_minify_alt_html'); }
-else { ob_start('fastvelocity_min_html_compression_finish'); }
-}
-
-# alternative html minification, minimal
-function fastvelocity_min_minify_alt_html($html) {
-$html = trim(preg_replace('/\v(?:[\t\v\h]+)/iu', "\n", $html));
-$html = trim(preg_replace('/\t(?:[\t\v\h]+)/iu', ' ', $html));
-$html = trim(preg_replace('/\h(?:[\t\v\h]+)/iu', ' ', $html));
-return $html;
+	if (fastvelocity_exclude_contents() == true) { return; }
+	ob_start('fastvelocity_min_html_compression_finish');
 }
 
 
@@ -645,12 +657,24 @@ function fvm_get_protocol($url) {
 
 	# cdn support
 	$fvm_cdn_url = get_option('fastvelocity_min_fvm_cdn_url');
-	$defer_for_pagespeed = get_option('fastvelocity_min_defer_for_pagespeed'); 
+	$fvm_cdn_url = trim(trim(str_ireplace(array('http://', 'https://'), '', trim($fvm_cdn_url, '/'))), '/');
 	
-	# excluded from cdn because of https://www.chromestatus.com/feature/5718547946799104 (we use document.write to preserve render blocking)
-	if(!empty($fvm_cdn_url) && $defer_for_pagespeed != true) {
-		$fvm_cdn_url = trim(trim(str_ireplace(array('http://', 'https://'), '', trim($fvm_cdn_url, '/'))), '/');
-		$url = str_ireplace($wp_domain, $fvm_cdn_url, $url);
+	# process cdn rewrite
+	if(!empty($fvm_cdn_url) && fvm_is_local_domain($url) !== false) {
+		
+		# for js files, we need to consider thew defer for insights option
+		if(substr($url, -3) == '.js') {
+			
+			$defer_for_pagespeed = get_option('fastvelocity_min_defer_for_pagespeed');
+			$fvm_cdn_force = get_option('fastvelocity_min_fvm_cdn_force');
+			
+			if($defer_for_pagespeed != true || $fvm_cdn_force != false) {
+				$url = str_ireplace($wp_domain, $fvm_cdn_url, $url);
+			}
+		
+		} else {
+			$url = str_ireplace($wp_domain, $fvm_cdn_url, $url);
+		}
 	}
 
 	# enforce protocol if needed
@@ -695,6 +719,7 @@ function fvm_purge_all() {
 	# remove cache files, set last update and clean legacy transients
 	fastvelocity_rrmdir($cachebase);
 	fvm_transients_purge(); 
+	do_action('fvm_after_purge_all');
 	return true;
 }
 

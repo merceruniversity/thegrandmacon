@@ -70,12 +70,7 @@ final class NF_Actions_Save extends NF_Abstracts_Action
         $expiration_value = $form_id . ',' . $action_settings[ 'subs_expire_time' ];
 
         // Check for option value...
-        $option = get_option( 'nf_sub_expiration', false );
-
-        // If option doesn't exist we know that we can just create the option.
-        if( ! $option || empty( $option ) ){
-            return;
-        }
+        $option = get_option( 'nf_sub_expiration', array() );
 
         // If our expiration setting is turned on...
         if( 1 == $action_settings[ 'set_subs_to_expire' ] ) {

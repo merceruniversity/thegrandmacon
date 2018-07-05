@@ -60,7 +60,7 @@ final class NF_Database_Models_Form extends NF_Abstracts_Model
 
 	    $this->delete_submissions();
 
-        delete_option( 'nf_form_' . $this->_id );
+        WPN_Helper::delete_nf_cache( $this->_id );
     }
 
     private function delete_submissions( ) {
@@ -195,7 +195,7 @@ final class NF_Database_Models_Form extends NF_Abstracts_Model
             ));
         }
 
-        update_option( 'nf_form_' . $form_id, $form_cache );
+        WPN_Helper::update_nf_cache( $form_id, $form_cache );
 
         add_action( 'admin_notices', array( 'NF_Database_Models_Form', 'import_admin_notice' ) );
 

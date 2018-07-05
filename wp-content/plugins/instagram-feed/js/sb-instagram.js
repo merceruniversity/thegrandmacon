@@ -506,30 +506,24 @@ if(!sbi_js_exists){
 
                             //Caption
                             var captionText = '',
-                                created_time_raw = item.created_time;;
-/*
-                            var sbiInstagramHTML = '';
-                            if(showHoverInstagram){
-                                sbiInstagramHTML = '<a class="sbi_instagram_link" href="'+item.link+'" target="_blank" title="Instagram" '+hovertextstyles+'><span class="sbi-screenreader">View on Instagram</span><i class="fa fa-instagram"></i></a>';
+                                created_time_raw = item.created_time;
+
+                            if(item.caption != null && item.caption != ''){
+                                //Replace double quotes in the captions with the HTML symbol
+                                captionText = typeof item.caption !== 'undefined' ? item.caption.text.replace(/"/g, "&quot;") : '';
+                                captionText = captionText.replace(/\n/g, " ");
                             }
 
-                            // var sbiHoverEffect = 'sbi_' + feedOptions.hovereffect;
-                            var sbiHoverEffect = 'sbi_fade';
-
-                            //If it's a carousel feed then set the image padding directly on the sbi_item as the inherit in the CSS file doesn't work
-                            var carouselPadding = (carousel == true) ? ' style="padding: '+imagepadding+imagepaddingunit+' !important;"' : '';
-*/
                             var videoIsFirstCarouselItemClass = videoIsFirstCarouselItem ? ' sbi_carousel_vid_first' : '',
                                 carouselTypeIcon = item.type === 'carousel' ? '<i class="fa fa-clone sbi_carousel_icon" aria-hidden="true"></i>': '';
 
                             var playBtnHtml = item.type === 'video' || videoIsFirstCarouselItemClass ? '<i class="fa fa-play sbi_playbtn"></i>' : '';
 
                             //TEMPLATE:
-
                             imagesHTML += '<div class="sbi_item sbi_type_'+item.type+' sbi_new" id="sbi_'+item.id+'" data-date="'+created_time_raw+'">' +
                                     '<div class="sbi_photo_wrap">'+carouselTypeIcon+playBtnHtml +
                                         '<a class="sbi_photo" href="'+item.link+'" target="_blank">' +
-                                        '<img src="'+data_image+'" alt="'+captionText+'" width="200" height="200" />' +
+                                        '<img src="'+data_image+'" alt="'+captionText.replace(/<>/g, " ")+'" width="200" height="200" />' +
                                         '</a>' +
                                     '</div>' +
                                 '</div>';

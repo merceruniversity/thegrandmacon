@@ -88,6 +88,7 @@ final class NF_Database_SubmissionExpirationCron
      * Helper method that removes our expired subs.
      *
      * @param $expired_subs - array of sub ids that need to be deleted.
+     * @param $cap - The cap of the amount of subs you want deleted at 1 time.
      *
      * @return void
      */

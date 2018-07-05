@@ -216,5 +216,73 @@ jQuery(document).ready(function($) {
             $( '#nfTelSpinner' ).css( 'display', 'none' );
         } );  
     } );
-    
+
+    jQuery( '#nfTrashExpiredSubmissions' ).click( function( e ) {
+    	var that = this;
+    	var data = {
+    		closeOnClick: false,
+            closeOnEsc: true,
+            content: '<p>' + nf_settings.i18n.trashExpiredSubsMessage + '<p>',
+            btnPrimary: {
+				text: nf_settings.i18n.trashExpiredSubsButtonPrimary,
+				callback: function( e ) {
+                    // Hide the buttons.
+                    deleteModal.maybeShowActions( false );
+                    // Show the progress bar.
+                    deleteModal.maybeShowProgress( true );
+                    // Begin our cleanup process.
+                    that.submissionExpirationProcess( that, -1, deleteModal );
+
+				}
+			},
+            btnSecondary: {
+            	text: nf_settings.i18n.trashExpiredSubsButtonSecondary,
+				callback: function( e ) {
+            		deleteModal.toggleModal( false );
+				}
+			},
+            useProgressBar: true,
+		};
+
+        this.submissionExpirationProcess = function( context, steps, modal ) {
+            var data = {
+                action: 'nf_batch_process',
+                batch_type: 'expired_submission_cleanup',
+                security: nf_settings.batch_nonce
+            };
+            jQuery.post( nf_settings.ajax_url, data, function( response ) {
+                response = JSON.parse( response );
+                // If we're done...
+                if ( response.batch_complete ) {
+                    // Push our progress bar to 100%.
+                    modal.setProgress( 100 );
+                    modal.toggleModal( false );
+                    // Exit.
+                    return false;
+                }
+                // If we do not yet have a determined number of steps...
+                if ( -1 == steps ) {
+                    // If step_toal is defined...
+                    if ( 'undefined' != typeof response.step_total ) {
+                        // Use the step_total.
+                        steps = response.step_total;
+                    } // Otherwise... (step_total is not defined)
+                    else {
+                        // Use step_remaining.
+                        steps = response.step_remaining;
+                    }
+                }
+                // Calculate our current step.
+                var step = steps - response.step_remaining;
+                // Calculate our maximum progress for this step.
+                var maxProgress = Math.round( step / steps * 100 );
+                // Increment the progress.
+                modal.incrementProgress ( maxProgress );
+                // Recall our function...
+                context.submissionExpirationProcess( context, steps, modal );
+            } );
+        }
+
+    	var deleteModal = new NinjaModal( data );
+	});
 });

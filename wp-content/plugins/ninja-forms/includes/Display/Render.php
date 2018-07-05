@@ -332,7 +332,7 @@ final class NF_Display_Render
             }
 
             if( $cache_updated ) {
-                update_option('nf_form_' . $form_id, $form_cache); // Update form cache without duplicate fields.
+                WPN_Helper::update_nf_cache( $form_id, $form_cache ); // Update form cache without duplicate fields.
             }
         }
 

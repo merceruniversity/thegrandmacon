@@ -50,24 +50,17 @@ class NF_Admin_Processes_ChunkPublish extends NF_Abstracts_BatchProcess
             $this->remove_option();
         }
         // Fetch our option to see what step we're on.
-        $batch = get_option( 'nf_chunk_publish_' . $this->form_id );
+        $batch = $this->get_chunk( 'nf_chunk_publish_' . $this->form_id );
         // If we don't have an option to see what step we're on...
         if ( ! $batch ) {
             // Run startup.
             $this->startup();
             // Fetch our option now that it's created.
-            $batch = get_option( 'nf_chunk_publish_' . $this->form_id );
+            $batch = $this->get_chunk( 'nf_chunk_publish_' . $this->form_id );
         }
         $batch = explode( ',', $batch );
-        // If we already have a chunk for this step...
-        if ( get_option( 'nf_form_' . $this->form_id . '_publishing_' . $batch[ 0 ] ) ) {
-            // Update it.
-            update_option( 'nf_form_' . $this->form_id . '_publishing_' . $batch[ 0 ], stripslashes( $this->data[ 'chunk' ] ) );
-        } // Otherwise... (No chunk was found.)
-        else {
-            // Add it.
-            add_option( 'nf_form_' . $this->form_id . '_publishing_' . $batch[ 0 ], stripslashes( $this->data[ 'chunk' ] ), '', 'no' );
-        }
+        // Update the chunk.
+        $this->add_chunk( 'nf_form_' . $this->form_id . '_publishing_' . $batch[ 0 ], stripslashes( $this->data[ 'chunk' ] ) );
         // Increment our step.
         $batch[ 0 ]++;
         // If this was our last step...
@@ -77,7 +70,7 @@ class NF_Admin_Processes_ChunkPublish extends NF_Abstracts_BatchProcess
         } // Otherwise... (We have more steps.)
         else {
             // Update our step option.
-            update_option( 'nf_chunk_publish_' . $this->form_id, implode( ',', $batch ) );
+            $this->add_chunk( 'nf_chunk_publish_' . $this->form_id, implode( ',', $batch ) );
             // Request our next chunk.
             $this->response[ 'requesting' ] = $batch[ 0 ];
         }
@@ -94,7 +87,7 @@ class NF_Admin_Processes_ChunkPublish extends NF_Abstracts_BatchProcess
     {
         $value = '0,' . $this->data[ 'chunk_total' ];
         // Write our option to manage the process.
-        add_option( 'nf_chunk_publish_' . $this->form_id, $value, '', 'no' );
+        $this->add_chunk( 'nf_chunk_publish_' . $this->form_id, $value );
         // Process the first item.
         $this->process();
     }
@@ -110,11 +103,11 @@ class NF_Admin_Processes_ChunkPublish extends NF_Abstracts_BatchProcess
         
         
         $build = '';
-        $batch = get_option( 'nf_chunk_publish_' . $this->form_id );
+        $batch = $this->get_chunk( 'nf_chunk_publish_' . $this->form_id );
         $batch = explode( ',', $batch );
         // Add all of our chunks into a string.
         for ( $i = 0; $i < $batch[ 1 ]; $i++ ) {
-            $build .= get_option( 'nf_form_' . $this->form_id . '_publishing_' . $i );
+            $build .= $this->get_chunk( 'nf_form_' . $this->form_id . '_publishing_' . $i );
         }
 
         $form_data = json_decode( $build, ARRAY_A );
@@ -216,7 +209,7 @@ class NF_Admin_Processes_ChunkPublish extends NF_Abstracts_BatchProcess
         }
 
         delete_user_option( get_current_user_id(), 'nf_form_preview_' . $form_data['id'] );
-        update_option( 'nf_form_' . $form_data[ 'id' ], $form_data );
+        WPN_Helper::update_nf_cache( $form_data[ 'id' ], $form_data );
 
         do_action( 'ninja_forms_save_form', $form->get_id() );
 
@@ -236,37 +229,51 @@ class NF_Admin_Processes_ChunkPublish extends NF_Abstracts_BatchProcess
         echo wp_json_encode( $response );
 
         wp_die(); // this is required to terminate immediately and return a proper response
-        
-        /**************************************************************
-         * Start old data.
-         **************************************************************
-         */
-//        // Update the chunked cache option.
-//        $build = array();
-//        $batch = get_option( 'nf_chunk_publish_' . $this->form_id );
-//        $batch = explode( ',', $batch );
-//        // Add all of our chunks onto an array.
-//        for ( $i = 0; $i < $batch[ 1 ]; $i++ ) {
-//            $build[] = 'nf_form_' . $this->form_id . '_' . $i;
-//        }
-//        // Convert them to a string.
-//        $build = implode( ',', $build );
-//        // If we already have a chunked option...
-//        if ( get_option( 'nf_form_' . $this->form_id . '_chunks' ) ) {
-//            // Update it.
-//            update_option( 'nf_form_' . $this->form_id . '_chunks', $build );
-//        } // Otherwise... (If we don't already have one.)
-//        else {
-//            // Create it.
-//            add_option( 'nf_form_' . $this->form_id . '_chunks', $build, '', 'no' );
-//        }
-//        // Remove our option to manage the process.
-//        delete_option( 'nf_chunk_publish_' . $this->form_id );
-//        $this->response[ 'batch_complete' ] = true;
-        /**************************************************************
-         * End old data.
-         **************************************************************
-         */
+    }
+
+    /**
+     * Function to get our chunk data from the chunks table.
+     * 
+     * @param $slug (string) The name of the option in the db.
+     * @return string or FALSE
+     */
+    public function get_chunk( $slug ) {
+        global $wpdb;
+        // Get our option from our chunks table.
+        $sql = $wpdb->prepare( "SELECT `value` FROM `{$wpdb->prefix}nf3_chunks` WHERE `name` = %s", $slug );
+        $data = $wpdb->get_results( $sql, 'ARRAY_A' );
+        // If it exists there...
+        if ( ! empty( $data ) ) {
+            // Hand it off.
+            return $data[ 0 ][ 'value' ];
+        } // Otherwise... (It does not exist there.)
+        else {
+            // Try to fetch it from the options table.
+            return get_option( $slug );
+        }
+    }
+    
+    /**
+     * Function to replace update_option.
+     * 
+     * @param $slug (string) The name of the option in the db.
+     * @param $content (string) The data to be stored in the option.
+     */
+    public function add_chunk( $slug, $content ) {
+        // Check for an existing option.
+        global $wpdb;
+        $sql = "SELECT id FROM `{$wpdb->prefix}nf3_chunks` WHERE name = '{$slug}'";
+        $result = $wpdb->query( $sql );
+        // If we don't have one...
+        if ( empty ( $result ) ) {
+            // Insert it.
+            $sql = $wpdb->prepare( "INSERT INTO `{$wpdb->prefix}nf3_chunks` (name, value) VALUES ( %s, %s )", $slug,  $content );
+        } // Otherwise... (We do have one.)
+        else {
+            // Update the existing one.
+            $sql = $wpdb->prepare( "UPDATE `{$wpdb->prefix}nf3_chunks` SET value = %s WHERE name = %s", $content, $slug );
+        }
+        $wpdb->query( $sql );
     }
     
     /*
@@ -274,12 +281,13 @@ class NF_Admin_Processes_ChunkPublish extends NF_Abstracts_BatchProcess
      */
     public function remove_option() {
         // Remove our option to manage the process.
-        delete_option( 'nf_chunk_publish_' . $this->form_id );
+        global $wpdb;
+        $sql = $wpdb->prepare( "DELETE FROM `{$wpdb->prefix}nf3_chunks` WHERE name = %s", 'nf_chunk_publish_' . $this->form_id );
+        $wpdb->query( $sql );
         // If our form_id was a temp id...
         if ( ! is_numeric( $this->form_id ) ) {
             // Remove all of our chunk options.
-            global $wpdb;
-            $sql = "DELETE FROM `" . $wpdb->prefix . "options` WHERE option_name LIKE 'nf_form_" . $this->form_id . "_publishing_%'";
+            $sql = $wpdb->prepare( "DELETE FROM `" . $wpdb->prefix . "nf3_chunks` WHERE name LIKE %s", 'nf_form_' . $this->form_id . '_publishing_%' );
             $wpdb->query( $sql );
         }
         $this->data[ 'new_publish' ] = 'false';

@@ -468,7 +468,10 @@ Label Three, value-three, 3
 
 <script id="tmpl-nf-edit-setting-number" type="text/template">
     <label for="{{{ data.name }}}">{{{ data.label }}} {{{ data.renderTooltip() }}}
-        <input type="number" class="setting" id="{{{ data.name }}}" value="{{{ data.value }}}" placeholder="{{{ ( 'undefined' != typeof data.placeholder ) ? data.placeholder : '' }}}" />
+        <input type="number" class="setting" id="{{{ data.name }}}"
+               value="{{{ data.value }}}" {{{ data.renderMinMax() }}}
+               placeholder="{{{ ('undefined' != typeof data.placeholder ) ? data.placeholder : '' }}}" />
+	    <em>{{{ data.renderMinMaxHelper() }}}</em>
     </label>
 </script>
 

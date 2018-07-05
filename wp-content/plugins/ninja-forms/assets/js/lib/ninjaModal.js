@@ -56,6 +56,14 @@ function NinjaModal ( data ) {
 
 
 /**
+ * Function to destory the modal.
+ */
+NinjaModal.prototype.destroy = function () {
+    this.popup.destroy();
+}
+
+
+/**
  * Function to increment the progress bar.
  * 
  * @param max (int) The maximum percentage of complete the progress bar can be.

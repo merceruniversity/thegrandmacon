@@ -120,10 +120,10 @@ if(!function_exists('fvm_format_filesize')) {
 			} elseif($rawSize > 1) {
 				return number_format_i18n($rawSize, 0).' '.__('bytes', 'fvm-serverinfo');
 			} else {
-				return __('unknown', 'fvm-serverinfo');
+				return __('N/A', 'fvm-serverinfo');
 			}
 		} else {
-            return __('unknown', 'fvm-serverinfo');
+            return __('N/A', 'fvm-serverinfo');
         }
     }
 }
@@ -233,7 +233,7 @@ if(!function_exists('fvm_get_mysql_version')) {
 if(!function_exists('fvm_get_mysql_data_usage')) {
     function fvm_get_mysql_data_usage() {
         global $wpdb;
-        $data_usage = '';
+        $data_usage = 0;
         $tablesstatus = $wpdb->get_results("SHOW TABLE STATUS");
         foreach($tablesstatus as  $tablestatus) {
 			if(is_numeric($tablestatus->Data_length)) { $data_usage += $tablestatus->Data_length; } else { $data_usage += 0; }
@@ -250,7 +250,7 @@ if(!function_exists('fvm_get_mysql_data_usage')) {
 if(!function_exists('fvm_get_mysql_index_usage')) {
     function fvm_get_mysql_index_usage() {
         global $wpdb;
-        $index_usage = '';
+        $index_usage = 0;
         $tablesstatus = $wpdb->get_results("SHOW TABLE STATUS");
         foreach($tablesstatus as  $tablestatus) {
             if(is_numeric($tablestatus->Index_length)) { $index_usage +=  $tablestatus->Index_length; } else { $index_usage += 0; }
@@ -307,7 +307,7 @@ if(!function_exists('fvm_get_mysql_query_cache_size')) {
 ### Function: Get The Server Load
 if(!function_exists('fvm_get_serverload')) {
     function fvm_get_serverload() {
-        $server_load = '';
+        $server_load = 0;
 		$numCpus = 'N/A';
         if(PHP_OS != 'WINNT' && PHP_OS != 'WIN32') {
 			clearstatcache();
@@ -347,7 +347,7 @@ if(!function_exists('fvm_get_serverload')) {
 ### Function: Get The Server CPU's
 if(!function_exists('fvm_get_servercpu')) {
     function fvm_get_servercpu() {
-		$numCpus = '';
+		$numCpus = 0;
         if(PHP_OS != 'WINNT' && PHP_OS != 'WIN32') {
 			clearstatcache();
 			if (is_file('/proc/cpuinfo')) {

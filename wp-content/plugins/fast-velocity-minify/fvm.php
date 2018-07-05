@@ -5,7 +5,7 @@ Plugin URI: http://fastvelocity.com
 Description: Improve your speed score on GTmetrix, Pingdom Tools and Google PageSpeed Insights by merging and minifying CSS and JavaScript files into groups, compressing HTML and other speed optimizations. 
 Author: Raul Peixoto
 Author URI: http://fastvelocity.com
-Version: 2.3.2
+Version: 2.3.4
 License: GPL2
 
 ------------------------------------------------------------------------
@@ -111,7 +111,6 @@ $disable_css_minification = get_option('fastvelocity_min_disable_css_minificatio
 $use_yui = get_option('fastvelocity_min_use_yui');
 $remove_print_mediatypes = get_option('fastvelocity_min_remove_print_mediatypes'); 
 $skip_html_minification = get_option('fastvelocity_min_skip_html_minification');
-$use_alt_html_minification = get_option('fastvelocity_min_use_alt_html_minification');
 $strip_htmlcomments = get_option('fastvelocity_min_strip_htmlcomments');
 $skip_cssorder = get_option('fastvelocity_min_skip_cssorder');
 $skip_google_fonts = get_option('fastvelocity_min_skip_google_fonts');
@@ -179,7 +178,7 @@ if(is_admin()) {
 		}
 		
 		# when css async is on
-		add_action('wp_head', 'fvm_add_loadcss', PHP_INT_MAX); 
+		add_action('wp_footer', 'fvm_add_loadcss', PHP_INT_MAX); 
 		
 
 		# remove query from static assets and process defering (if enabled)
@@ -303,7 +302,6 @@ function fastvelocity_min_register_settings() {
 	register_setting('fvm-group', 'fastvelocity_min_use_yui');
     register_setting('fvm-group', 'fastvelocity_min_remove_print_mediatypes');
     register_setting('fvm-group', 'fastvelocity_min_skip_html_minification');
-    register_setting('fvm-group', 'fastvelocity_min_use_alt_html_minification');
 	register_setting('fvm-group', 'fastvelocity_min_strip_htmlcomments');
     register_setting('fvm-group', 'fastvelocity_min_skip_cssorder');
 	register_setting('fvm-group', 'fastvelocity_min_skip_google_fonts');
@@ -322,6 +320,7 @@ function fastvelocity_min_register_settings() {
 	register_setting('fvm-group', 'fastvelocity_min_preconnect');
 	register_setting('fvm-group', 'fastvelocity_min_fvm_fix_editor');
 	register_setting('fvm-group', 'fastvelocity_min_fvm_cdn_url');
+	register_setting('fvm-group', 'fastvelocity_min_fvm_cdn_force');
 	
 	# pro version (for private usage... or if you know what you're doing)
 	register_setting('fvm-group-pro', 'fastvelocity_min_loadcss');
@@ -497,11 +496,6 @@ Disable HTML Minification <span class="note-info">[ This will disable HTML minif
 Strip HTML comments <span class="note-info">[ Only works with the default HTML minification, but note that some plugins need HTML comments to work properly ]</span></label>
 <br />
 
-<label for="fastvelocity_min_use_alt_html_minification">
-<input name="fastvelocity_min_use_alt_html_minification" type="checkbox" id="fastvelocity_min_use_alt_html_minification" value="1" <?php echo checked(1 == get_option('fastvelocity_min_use_alt_html_minification'), true, false); ?>>
-Use the alternative HTML minification <span class="note-info">[ Select this, ONLY if you have trouble with the default HTML minification ]</span></label>
-<br />
-
 </fieldset></td>
 </tr>
 
@@ -618,12 +612,12 @@ Enable defer parsing of JS files globally <span class="note-info">[ Not all brow
 <br />
 <label for="fastvelocity_min_defer_for_pagespeed">
 <input name="fastvelocity_min_defer_for_pagespeed" type="checkbox" id="fastvelocity_min_defer_for_pagespeed" value="1" <?php echo checked(1 == get_option('fastvelocity_min_defer_for_pagespeed'), true, false); ?>>
-Enable defer of JS for Pagespeed Insights <span class="note-info">[ Defer JS files for Pagespeed Insights only, <a target="_blank" href="https://www.chromestatus.com/feature/5718547946799104">except external scripts</a> (avoid using a CDN for JS files) ]</span></label>
+Enable defer of JS for Pagespeed Insights <span class="note-info">[ Defer JS files for Pagespeed Insights only ]</span></label>
 <br />
 
 <label for="fastvelocity_min_defer_for_pagespeed_optimize">
 <input name="fastvelocity_min_defer_for_pagespeed_optimize" type="checkbox" id="fastvelocity_min_defer_for_pagespeed_optimize" value="1" <?php echo checked(1 == get_option('fastvelocity_min_defer_for_pagespeed_optimize'), true, false); ?>>
-Also defer the "ignore list" for Pagespeed Insights <span class="note-info">[ Defer JS files on the ignore list for Pagespeed Insights only ]</span></label>
+Exclude JS files in the "ignore list" from Pagespeed Insights <span class="note-info">[ This only works with the option to defer for Pagespeed Insights ]</span></label>
 <br />
 
 <label for="fastvelocity_min_exclude_defer_jquery">
@@ -663,17 +657,26 @@ Skip deferring completely on the login page <span class="note-info">[ If selecte
 
 <div style="height: 20px;"></div>
 <h2 class="title">CDN Options</h2>
-<p class="fvm-bold-green">If the "Enable defer of JS for Pagespeed Insights" option is enabled, JS and CSS files will not be loaded from the CDN.<br />However, the static assets used inside the CSS and JS files will load from the CDN directly.</p>
+<p class="fvm-bold-green">When the "Enable defer of JS for Pagespeed Insights" option is enabled, JS and CSS files will not be loaded from the CDN due to <a target="_blank" href="https://www.chromestatus.com/feature/5718547946799104">compatibility</a> reasons.<br />However, you can define a CDN Domain below, in order to use it for all of the static assets "inside" your CSS and JS files.</p>
 
 <table class="form-table fvm-settings">
 <tbody>
 <tr>
 <th scope="row"><span class="fvm-label-special">Your CDN domain</span></th>
 <td><fieldset>
+
 <label for="fastvelocity_min_fvm_cdn_url">
 <p><input type="text" name="fastvelocity_min_fvm_cdn_url" id="fastvelocity_min_fvm_cdn_url" value="<?php echo get_option('fastvelocity_min_fvm_cdn_url', ''); ?>" size="80" /></p>
-<p class="description">[ Load the generated CSS and JS urls (only) from your cdn domain name, ie: cdn.example.com ]</p></label>
-</fieldset></td>
+<p class="description">[ Will rewrite the static assets urls inside FVM merged files to your cdn domain. Usage: cdn.example.com ]</p></label>
+</fieldset>
+<br />
+
+<label for="fastvelocity_min_fvm_cdn_force">
+<input name="fastvelocity_min_fvm_cdn_force" type="checkbox" id="fastvelocity_min_fvm_cdn_force" value="1" <?php echo checked(1 == get_option('fastvelocity_min_fvm_cdn_force'), true, false); ?>>
+I know what I'm doing... <span class="note-info">[ Load my JS files from the CDN, even when "defer for Pagespeed Insights" is enabled ]</span></label>
+<br />
+
+</td>
 </tr>
 </tbody></table>
 
@@ -1026,12 +1029,16 @@ for($i=0,$l=count($header);$i<$l;$i++) {
 		}
 		if(count($data) > 0) { $wp_scripts->registered["fvm-header-$i"]->extra['data'] = implode("\n", $data); }
 		
-		# enqueue file
-		wp_enqueue_script("fvm-header-$i");
+		# enqueue file, if not empty
+		$check = ''; $check = trim(file_get_contents($file));
+		if(file_exists($file) && (!empty($check) || count($data) > 0)) {
+			wp_enqueue_script("fvm-header-$i");
+		}
 	
 	# other scripts need to be requeued for the order of files to be kept
 	} else {
-		wp_dequeue_script($header[$i]['handle']); wp_enqueue_script($header[$i]['handle']);
+		wp_dequeue_script($header[$i]['handle']); 
+		wp_enqueue_script($header[$i]['handle']);
 	}
 }
 
@@ -1136,7 +1143,8 @@ for($i=0,$l=count($footer);$i<$l;$i++) {
 			
 				# consider dependencies on handles with an empty src
 				} else {
-					wp_dequeue_script($handle); wp_enqueue_script($handle);
+					wp_dequeue_script($handle); 
+					wp_enqueue_script($handle);
 				}
 			endforeach;	
 			
@@ -1159,8 +1167,11 @@ for($i=0,$l=count($footer);$i<$l;$i++) {
 		}
 		if(count($data) > 0) { $wp_scripts->registered["fvm-footer-$i"]->extra['data'] = implode("\n", $data); }
 		
-		# enqueue file
-		wp_enqueue_script("fvm-footer-$i");
+		# enqueue file, if not empty
+		$check = ''; $check = trim(file_get_contents($file));
+		if(file_exists($file) && (!empty($check) || count($data) > 0)) {
+			wp_enqueue_script("fvm-footer-$i");
+		}
 	
 	# other scripts need to be requeued for the order of files to be kept
 	} else {
@@ -1222,7 +1233,7 @@ if($enable_defer_js == true) { return $tagdefer; }
 if ($defer_for_pagespeed != true) { return $tag; } else { 
 
 # return if external script url https://www.chromestatus.com/feature/5718547946799104
-if (fvm_is_local_domain($src) == true) { return $tag; }
+if (fvm_is_local_domain($src) !== true) { return $tag; }
 
 # return if there are linebreaks (will break document.write)
 if (stripos($tag, "\n") !== false) { return $tag; }
@@ -1470,7 +1481,8 @@ for($i=0,$l=count($header);$i<$l;$i++) {
 			
 				# consider dependencies on handles with an empty src
 				} else {
-					wp_dequeue_script($handle); wp_enqueue_script($handle);
+					wp_dequeue_script($handle); 
+					wp_enqueue_script($handle);
 				}
 			endforeach;	
 			
@@ -1487,40 +1499,48 @@ for($i=0,$l=count($header);$i<$l;$i++) {
 		# register and enqueue minified file, consider excluding of mediatype "print" and inline css
 		if ($remove_print_mediatypes != 1 || ($remove_print_mediatypes == 1 && $header[$i]['media'] != 'print')) {
 			if($force_inline_css != false) {
-				echo '<style type="text/css" media="'.$header[$i]['media'].'">'.file_get_contents($file).'</style>';
+				
+				# print file, if not empty
+				$check = ''; $check = trim(file_get_contents($file));
+				if(file_exists($file) && !empty($check)) {
+					echo '<style type="text/css" media="'.$header[$i]['media'].'">'.$check.'</style>';
+				}
+
 			} else {
 				
 				# move CSS to footer with loadCSS ?
 				if($loadcss != false) {
 					if($fvm_remove_css != true) {
 
-# save to some sort of global and show it on the footer
-$mt = $header[$i]['media'];
-echo '<link rel="preload" href="'.$file_url.'" as="style" media="'.$mt.'" onload="this.onload=null;this.rel=\'stylesheet\'">';
-echo '<noscript><link rel="stylesheet" type="text/css" media="'.$mt.'" href="'.$file_url.'"></noscript>';
-echo '<!--[if IE]><link rel="stylesheet" type="text/css" media="'.$mt.'" href="'.$file_url.'"><![endif]-->';
+						# save to some sort of global and show it on the footer
+						$mt = $header[$i]['media'];
+						echo '<link rel="preload" href="'.$file_url.'" as="style" media="'.$mt.'" onload="this.onload=null;this.rel=\'stylesheet\'">';
+						echo '<noscript><link rel="stylesheet" type="text/css" media="'.$mt.'" href="'.$file_url.'"></noscript>';
+						echo '<!--[if IE]><link rel="stylesheet" type="text/css" media="'.$mt.'" href="'.$file_url.'"><![endif]-->';
 
-/*
-# alternative way
-echo <<<EOF
-<script type="text/javascript">var ldfvm$i=document.createElement("link");ldfvm$i.rel="stylesheet",ldfvm$i.type="text/css",ldfvm$i.media="bogus",ldfvm$i.href="$file_url",ldfvm$i.onload=function(){ldfvm$i.media="$mt"},document.getElementsByTagName("head")[0].appendChild(ldfvm$i);</script>
-EOF;
-*/
+						/*
+						# alternative way
+						echo <<<EOF
+						<script type="text/javascript">var ldfvm$i=document.createElement("link");ldfvm$i.rel="stylesheet",ldfvm$i.type="text/css",ldfvm$i.media="bogus",ldfvm$i.href="$file_url",ldfvm$i.onload=function(){ldfvm$i.media="$mt"},document.getElementsByTagName("head")[0].appendChild(ldfvm$i);</script>
+						EOF;
+						*/
 
 					}
 				} else {
-				
-					# default
-					wp_register_style("fvm-header-$i", $file_url, array(), null, $header[$i]['media']); 
-					wp_enqueue_style("fvm-header-$i");
-				
+					# enqueue file, if not empty
+					$check = ''; $check = trim(file_get_contents($file));
+					if(file_exists($file) && !empty($check)) {
+						wp_register_style("fvm-header-$i", $file_url, array(), null, $header[$i]['media']); 
+						wp_enqueue_style("fvm-header-$i");
+					}
 				}
 			}
 		}
 
 	# other css need to be requeued for the order of files to be kept
 	} else {
-		wp_dequeue_style($header[$i]['handle']); wp_enqueue_style($header[$i]['handle']);
+		wp_dequeue_style($header[$i]['handle']); 
+		wp_enqueue_style($header[$i]['handle']);
 	}
 }
 
@@ -1594,7 +1614,7 @@ if(!$skip_google_fonts && count($google_fonts) > 0) {
 		
 		# inline css or fail
 		if($newcode !== false) { 
-			echo '<style type="text/css" media="all">'.$newcode.'</style>';				
+			echo '<style type="text/css" media="all">'.$newcode.'</style>';
 		} else {
 			echo "<!-- GOOGLE FONTS REQUEST FAILED for $concat_google_fonts -->\n";     # log if failed
 		}	
@@ -1731,7 +1751,8 @@ for($i=0,$l=count($footer);$i<$l;$i++) {
 			
 				# consider dependencies on handles with an empty src
 				} else {
-					wp_dequeue_script($handle); wp_enqueue_script($handle);
+					wp_dequeue_script($handle); 
+					wp_enqueue_script($handle);
 				}
 			endforeach;	
 			
@@ -1757,15 +1778,20 @@ for($i=0,$l=count($footer);$i<$l;$i++) {
 						echo '<link rel="stylesheet" type="text/css" media="'.$footer[$i]['media'].'" href="'.$file_url.'">';
 					}
 				} else {
-					wp_register_style("fvm-footer-$i", $file_url, array(), null, $footer[$i]['media']); 
-					wp_enqueue_style("fvm-footer-$i");
+					# enqueue file, if not empty
+					$check = ''; $check = trim(file_get_contents($file));
+					if(file_exists($file) && !empty($check)) {
+						wp_register_style("fvm-footer-$i", $file_url, array(), null, $footer[$i]['media']); 
+						wp_enqueue_style("fvm-footer-$i");
+					}
 				}
 			}
 		}
 
 	# other css need to be requeued for the order of files to be kept
 	} else {
-		wp_dequeue_style($footer[$i]['handle']); wp_enqueue_style($footer[$i]['handle']);
+		wp_dequeue_style($footer[$i]['handle']); 
+		wp_enqueue_style($footer[$i]['handle']);
 	}
 }
 
@@ -1778,6 +1804,7 @@ $wp_styles->done = $done;
 
 ###########################################
 # defer CSS globally from the header (order matters)
+# dev: https://www.filamentgroup.com/lab/async-css.html
 ###########################################
 function fvm_add_loadcss() { 
 global $force_inline_css, $loadcss, $fvm_remove_css; 
@@ -1786,7 +1813,7 @@ if($force_inline_css == true && $loadcss != false && $fvm_remove_css != true) {
 		# echo LoadCSS scripts
 		echo '<script>
 		/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
-		!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){function e(){t.media=a}var a=t.media||"all";t.addEventListener?t.addEventListener("load",e):t.attachEvent&&t.attachEvent("onload",e),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(e,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+		!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
 		</script>';
 }
 }
@@ -1842,7 +1869,7 @@ if (stripos($tag, "\n") !== false) { return $tag; }
 if($fvm_fix_editor == true && is_user_logged_in()) { return $tag; }
 
 # return if external script url https://www.chromestatus.com/feature/5718547946799104
-if (fvm_is_local_domain($src) == true) { return $tag; }
+if (fvm_is_local_domain($src) !== true) { return $tag; }
 
 # exclude ignored scripts
 if(substr($handle, 0, 4) != "fvm-" && $defer_for_pagespeed == true && $defer_for_pagespeed_optimize == true) {

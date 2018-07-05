@@ -18,7 +18,7 @@ function ninja_forms_ajax_import_form(){
 
     $form_id = ( isset( $_POST[ 'formID' ] ) ) ? absint( $_POST[ 'formID' ] ) : '';
 
-    delete_option( 'nf_form_' . $form_id ); // Bust the cache.
+    WPN_Helper::delete_nf_cache( $form_id ); // Bust the cache.
 
     Ninja_Forms()->form()->import_form( $import, TRUE, $form_id, TRUE );
 

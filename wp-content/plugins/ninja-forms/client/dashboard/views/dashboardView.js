@@ -324,7 +324,7 @@ define( [ 'views/sections/widgets.js', 'views/sections/services.js', 'views/sect
             var data = {
                 action: 'nf_batch_process',
                 batch_type: 'data_cleanup',
-                security: nfAdmin.ajaxNonce
+                security: nfAdmin.batchNonce
             };
             jQuery.post( ajaxurl, data, function( response ) {
                 response = JSON.parse( response );

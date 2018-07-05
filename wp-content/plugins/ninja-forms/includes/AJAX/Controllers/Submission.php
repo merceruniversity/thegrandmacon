@@ -66,7 +66,7 @@ class NF_AJAX_Controllers_Submission extends NF_Abstracts_Controller
                 $this->_respond();
             }
         } else {
-            $this->_form_cache = get_option( 'nf_form_' . $this->_form_id );
+            $this->_form_cache = WPN_Helper::get_nf_cache( $this->_form_id );
         }
 
         // TODO: Update Conditional Logic to preserve field ID => [ Settings, ID ] structure.

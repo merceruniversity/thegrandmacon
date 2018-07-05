@@ -1745,9 +1745,21 @@ foreach ( $plugins as $plugin_path => $plugin ) {
 
 ## PLUGIN SETTINGS: ##
 sb_instagram_plugin_type => Instagram Feed Free
-<?php 
-while (list($key, $val) = each($sbi_options)) {
-    echo "$key => $val\n";
+<?php
+foreach( $sbi_options as $key => $val ) {
+	if ( is_array( $val ) ) {
+		foreach ( $val as $item ) {
+			if ( is_array( $item ) ) {
+				foreach ( $item as $key2 => $val2 ) {
+					echo "$key2 => $val2\n";
+				}
+			} else {
+				echo "$key => $item\n";
+			}
+		}
+	} else {
+		echo "$key => $val\n";
+	}
 }
 ?>
 

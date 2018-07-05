@@ -2,7 +2,7 @@
 Contributors: Alignak
 Tags: PHP Minify, YUI Compressor, GTmetrix, Pingdom, Pagespeed, CSS Merging, JS Merging, CSS Minification, JS Minification, Speed Optimization, HTML Minification, Performance
 Requires at least: 4.5
-Stable tag: 2.3.2
+Stable tag: 2.3.4
 Tested up to: 4.9.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -262,14 +262,16 @@ If you would like to donate any amount to the plugin author (thank you in advanc
 
 ...
 
-
-== Upgrade Notice ==
-
-= 2.2.4 =
-Note: Kindly re-save all options and purge all caches (the plugin cache as well as your server /plugin cache).
-
-
 == Changelog ==
+
+= 2.3.4 [2018.06.30] =
+* bug fix
+
+= 2.3.3 [2018.06.30] =
+* added a check to prevent creating an empty js or css file
+* added an option to force the CDN option when using the defer for insights option
+* removed the alternative HTML minification method
+* minor performance and bug fixes
 
 = 2.3.2 [2018.06.03] =
 * added some compatibility fixes when merging and minifying JS files

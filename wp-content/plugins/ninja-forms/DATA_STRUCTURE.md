@@ -271,6 +271,21 @@ _**nf3_upgrades**_ (Table of Forms as they exist in the current structure and th
   * NOT NULL
   * DEFAULT 0
 
+### Chunks
+
+_**nf3_chunks**_ (Table of Chunks created on publish to be reconstructed into a Ninja Forms cache)
+* id (The unique ID of the Chunk)
+  * int(11)
+  * NOT NULL
+  * AUTO_INCREMENT
+  * Primary Key
+* name (The name of the Chunk)
+  * varchar(200)
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* value (The value of the Chunk)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+
 ## Version 1.0
 
 Defined initial structure for Ninja Forms data layer.
@@ -543,3 +558,20 @@ _**nf3_upgrades**_ (Table of Forms as they exist in the current structure and th
   * int(11)
   * NOT NULL
   * DEFAULT 0
+
+Defined chunks table for ensuring collate of chunked publish.
+
+### Chunks
+
+_**nf3_chunks**_ (Table of Chunks created on publish to be reconstructed into a Ninja Forms cache)
+* id (The unique ID of the Chunk)
+  * int(11)
+  * NOT NULL
+  * AUTO_INCREMENT
+  * Primary Key
+* name (The name of the Chunk)
+  * varchar(200)
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* value (The value of the Chunk)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
