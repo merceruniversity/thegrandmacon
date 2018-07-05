@@ -41,6 +41,18 @@ Template:     movedo
     text-transform: none;
 }
 
+.grve-post-header .h2,
+.grve-post-header .grve-h2 {
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.grve-post-header.grve-post-header .h2::after,
+.grve-post-header.grve-post-header .grve-h2::after {
+    display: none;
+}
+
 /*
 
 ██╗     ██╗███╗   ██╗██╗  ██╗███████╗
