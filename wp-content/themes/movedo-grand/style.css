@@ -102,10 +102,12 @@ Template:     movedo
     z-index: -1;
 }
 
-.skewed-background h2 {
-    border-bottom: 5px solid #d2232a;
-    max-width: 70%;
-    padding-bottom: 1rem;
+.skewed-background h2::after {
+    background-color: #d2232a;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: 1rem;
 }
 
 .skewed-background a {
@@ -129,6 +131,10 @@ Template:     movedo
 
 .skewed-background--outside::before {
     height: calc(100% + 100px);
+}
+
+.skewed-background--outside h2::after {
+    width: 33%;
 }
 
 /*
