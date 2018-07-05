@@ -87,68 +87,13 @@ Template:     movedo
     padding: 5px 12px;
 }
 
-/*
-
-███████╗██╗  ██╗███████╗██╗    ██╗███████╗██████╗     ██████╗  █████╗  ██████╗██╗  ██╗ ██████╗ ██████╗  ██████╗ ██╗   ██╗███╗   ██╗██████╗ 
-██╔════╝██║ ██╔╝██╔════╝██║    ██║██╔════╝██╔══██╗    ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔════╝ ██╔══██╗██╔═══██╗██║   ██║████╗  ██║██╔══██╗
-███████╗█████╔╝ █████╗  ██║ █╗ ██║█████╗  ██║  ██║    ██████╔╝███████║██║     █████╔╝ ██║  ███╗██████╔╝██║   ██║██║   ██║██╔██╗ ██║██║  ██║
-╚════██║██╔═██╗ ██╔══╝  ██║███╗██║██╔══╝  ██║  ██║    ██╔══██╗██╔══██║██║     ██╔═██╗ ██║   ██║██╔══██╗██║   ██║██║   ██║██║╚██╗██║██║  ██║
-███████║██║  ██╗███████╗╚███╔███╔╝███████╗██████╔╝    ██████╔╝██║  ██║╚██████╗██║  ██╗╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║ ╚████║██████╔╝
-╚══════╝╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚═════╝     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚═════╝ 
-
-*/
-
-.skewed-background {
-    height: 100%;
-    padding: 1rem;
-    position: relative;
-}
-
-.skewed-background::before {
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px, rgba(0, 0, 0, 0.3) -1px -3px 2px;
-    content: '';
-    display: block;
-    left: 0;
-    position: absolute;
-    top: 50%;
-    transform: skew(0, 10deg) translate(0, -50%);
-    width: 100%;
-    z-index: -1;
-}
-
-.skewed-background h2::after {
-    background-color: #d2232a;
-    content: '';
-    display: block;
-    height: 5px;
-    margin-top: 1rem;
-}
-
-.skewed-background a {
-    display: inline-block;
-    color: #d2232a;
-    border: 1px solid #d2232a;
-    padding: 0.2rem 0.5rem;
-}
-
-/* Skewed Background: Inside */
-
-.skewed-background--inside {
-    padding: 30% 1rem;
-}
-
-.skewed-background--inside::before {
-    height: 80%;
-}
-
 /* Skewed Background: Outside */
 
-.skewed-background--outside::before {
+.grve-text.skewed-background--outside::before {
     height: calc(100% + 100px);
 }
 
-.skewed-background--outside h2::after {
+.grve-text.skewed-background--outside h2::after {
     width: 33%;
 }
 
@@ -229,6 +174,62 @@ footer .menu > .menu-item {
 
 /*
 
+██████╗ ██╗   ██╗████████╗████████╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║   ██║╚══██╔══╝╚══██╔══╝██╔═══██╗████╗  ██║██╔════╝
+██████╔╝██║   ██║   ██║      ██║   ██║   ██║██╔██╗ ██║███████╗
+██╔══██╗██║   ██║   ██║      ██║   ██║   ██║██║╚██╗██║╚════██║
+██████╔╝╚██████╔╝   ██║      ██║   ╚██████╔╝██║ ╚████║███████║
+╚═════╝  ╚═════╝    ╚═╝      ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+
+*/
+
+.btn.btn {
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+}
+
+.btn--primary {
+    background-color: #d2232a;
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background-color: #2a2629;
+    border-color: #fff;
+    text-decoration: none;
+}
+
+.btn--secondary {
+    background-color: #fff;
+    border-color: #2a2629;
+    color: #2a2629;
+}
+
+.btn--secondary:hover {
+    background-color: #2a262a;
+    border-color: #fff;
+    text-decoration: none;
+}
+
+.btn--tertiary {
+    background-color: #fff;
+    border-color: #d2232a33;
+    color: #2a2629;
+}
+
+.btn--tertiary:hover {
+    background-color: #fff;
+    border-color: #d2232a;
+    color: #d2232a;
+    text-decoration: none;
+}
+
+/*
+
  ██████╗ ██████╗ ██╗     ██╗   ██╗███╗   ███╗███╗   ██╗███████╗
 ██╔════╝██╔═══██╗██║     ██║   ██║████╗ ████║████╗  ██║██╔════╝
 ██║     ██║   ██║██║     ██║   ██║██╔████╔██║██╔██╗ ██║███████╗
@@ -237,6 +238,8 @@ footer .menu > .menu-item {
  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══╝╚══════╝
 
 */
+
+/* Boxes */
 
 .grve-column.box .grve-column-wrapper {
     background-color: #fff;
@@ -256,4 +259,49 @@ footer .menu > .menu-item {
     height: 5px;
     margin-top: 1rem;
     width: 33%;
+}
+
+.grve-column.box h2 {
+    display: inline-block;
+}
+
+.grve-column.box h2::after {
+    background-color: #d2232a;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: 1rem;
+    max-width: 33%;
+}
+
+/* Skewed Box */
+
+.grve-column.box.box--skewed .grve-column-wrapper {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.grve-column.box.box--skewed .grve-column-wrapper::before {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px, rgba(0, 0, 0, 0.3) -1px -3px 2px;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: skew(0, 10deg) translate(0, -50%);
+    width: 100%;
+    z-index: -1;
+}
+
+/* Centered Box */
+
+.grve-column.box.box--centered h2 {
+    display: block;
+}
+
+.grve-column.box.box-centered h2::after {
+    max-width: auto;
 }
