@@ -305,7 +305,8 @@ footer .menu > .menu-item {
 .goh-column-box.goh-column-box--skewed .grve-column-wrapper::before,
 .goh-column-box.goh-column-box--skewed .grve-column-wrapper-inner::before {
     background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px, rgba(0, 0, 0, 0.3) -1px -3px 2px;
+    border: 1px solid #C4C4C4;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px;
     content: '';
     display: block;
     height: 100%;
