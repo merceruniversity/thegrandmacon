@@ -279,18 +279,21 @@ footer .menu > .menu-item {
 
 /* Boxes */
 
-.goh-column-box .grve-column-wrapper {
+.goh-column-box .grve-column-wrapper,
+.goh-column-box .grve-column-wrapper-inner {
     background-color: #fff;
     border: 1px solid #C4C4C4;
     box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px;
     padding: 2rem;
 }
 
-.goh-column-box .grve-column-wrapper .grve-title {
+.goh-column-box .grve-column-wrapper .grve-title,
+.goh-column-box .grve-column-wrapper-inner .grve-title {
     display: inline-block;
 }
 
-.goh-column-box .grve-column-wrapper .grve-title::after {
+.goh-column-box .grve-column-wrapper .grve-title::after,
+.goh-column-box .grve-column-wrapper-inner .grve-title::after {
     background-color: #d2232a;
     content: '';
     display: block;
@@ -314,13 +317,15 @@ footer .menu > .menu-item {
 
 /* Skewed Box */
 
-.goh-column-box.goh-column-box--skewed .grve-column-wrapper {
+.goh-column-box.goh-column-box--skewed .grve-column-wrapper,
+.goh-column-box.goh-column-box--skewed .grve-column-wrapper-inner {
     background-color: transparent;
     border: none;
     box-shadow: none;
 }
 
-.goh-column-box.goh-column-box--skewed .grve-column-wrapper::before {
+.goh-column-box.goh-column-box--skewed .grve-column-wrapper::before,
+.goh-column-box.goh-column-box--skewed .grve-column-wrapper-inner::before {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px, rgba(0, 0, 0, 0.3) -1px -3px 2px;
     content: '';
