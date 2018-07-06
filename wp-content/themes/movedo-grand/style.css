@@ -225,16 +225,33 @@ footer .menu > .menu-item {
 
 /* Carcoal Background */
 
-.goh-row--charcoal .grve-background-wrapper {
+#grve-content .goh-row.goh-row--charcoal,
+#grve-content .goh-row.goh-row--charcoal h1,
+#grve-content .goh-row.goh-row--charcoal h2,
+#grve-content .goh-row.goh-row--charcoal h3,
+#grve-content .goh-row.goh-row--charcoal h4,
+#grve-content .goh-row.goh-row--charcoal h5,
+#grve-content .goh-row.goh-row--charcoal h6,
+#grve-content .goh-row.goh-row--charcoal input,
+#grve-content .goh-row.goh-row--charcoal input:active,
+#grve-content .goh-row.goh-row--charcoal input:focus {
+    color: #fff;
+}
+
+#grve-content .goh-row.goh-row--charcoal input {
+    font-size: 18px;
+}
+
+.goh-row.goh-row--charcoal .grve-background-wrapper {
     background-color: #2a2629;
 }
 
-.goh-row--charcoal h2 {
+.goh-row.goh-row--charcoal h2 {
     color: #fff;
     display: inline-block;
 }
 
-.goh-row--charcoal h2::after {
+.goh-row.goh-row--charcoal h2::after {
     background-color: #ebae36;
     content: '';
     display: block;
@@ -345,6 +362,7 @@ footer .menu > .menu-item {
 
 */
 
+/* For the Buy Season Tickets link in the main menu */
 .grve-square > .grve-item::after {
     display: none;
 }
