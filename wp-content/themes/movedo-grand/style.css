@@ -279,18 +279,18 @@ footer .menu > .menu-item {
 
 /* Boxes */
 
-.grve-column.box .grve-column-wrapper {
+.goh-column-box .grve-column-wrapper {
     background-color: #fff;
     border: 1px solid #C4C4C4;
     box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px;
     padding: 2rem;
 }
 
-.grve-column.box .grve-column-wrapper .grve-title {
+.goh-column-box .grve-column-wrapper .grve-title {
     display: inline-block;
 }
 
-.grve-column.box .grve-column-wrapper .grve-title::after {
+.goh-column-box .grve-column-wrapper .grve-title::after {
     background-color: #d2232a;
     content: '';
     display: block;
@@ -299,11 +299,11 @@ footer .menu > .menu-item {
     width: 33%;
 }
 
-.grve-column.box h2 {
+.goh-column-box h2 {
     display: inline-block;
 }
 
-.grve-column.box h2::after {
+.goh-column-box h2::after {
     background-color: #d2232a;
     content: '';
     display: block;
@@ -314,13 +314,13 @@ footer .menu > .menu-item {
 
 /* Skewed Box */
 
-.grve-column.box.box--skewed .grve-column-wrapper {
+.goh-column-box.goh-column-box--skewed .grve-column-wrapper {
     background-color: transparent;
     border: none;
     box-shadow: none;
 }
 
-.grve-column.box.box--skewed .grve-column-wrapper::before {
+.goh-column-box.goh-column-box--skewed .grve-column-wrapper::before {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.3) 1px 3px 2px, rgba(0, 0, 0, 0.3) -1px -3px 2px;
     content: '';
@@ -336,10 +336,10 @@ footer .menu > .menu-item {
 
 /* Centered Box */
 
-.grve-column.box.box--centered h2 {
+.goh-column-box.goh-column-box--centered h2 {
     display: block;
 }
 
-.grve-column.box.box-centered h2::after {
+.goh-column-box.goh-column-box--centered h2::after {
     max-width: auto;
 }
