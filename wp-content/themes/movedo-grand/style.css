@@ -234,7 +234,8 @@ footer .menu > .menu-item {
 #grve-content .goh-row.goh-row--charcoal h6,
 #grve-content .goh-row.goh-row--charcoal input,
 #grve-content .goh-row.goh-row--charcoal input:active,
-#grve-content .goh-row.goh-row--charcoal input:focus {
+#grve-content .goh-row.goh-row--charcoal input:focus,
+#grve-content .goh-row.goh-row--charcoal label {
     color: #fff;
 }
 
