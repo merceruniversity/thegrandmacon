@@ -299,7 +299,7 @@ footer .menu > .menu-item {
     background-color: transparent;
     border: none;
     box-shadow: none;
-    padding: 15% 0;
+    padding: 15% 15px;
 }
 
 .goh-column-box.goh-column-box--skewed .grve-column-wrapper::before,
