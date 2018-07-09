@@ -53,6 +53,10 @@ Template:     movedo
     display: none;
 }
 
+.grve-element.grve-text li + li {
+    margin-top: 1.5rem;
+}
+
 /*
 
 ██╗     ██╗███╗   ██╗██╗  ██╗███████╗
