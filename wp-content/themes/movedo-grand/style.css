@@ -177,31 +177,35 @@ footer .menu > .menu-item {
     letter-spacing: 0;
 }
 
-.goh-btn--primary {
+.goh-btn.goh-btn.goh-btn--primary {
     background-color: #d2232a;
     border-color: #fff;
     color: #fff;
 }
 
-.goh-btn--primary:hover {
+.goh-btn.goh-btn.goh-btn--primary:hover {
     background-color: #2a2629;
     border-color: #fff;
     text-decoration: none;
 }
 
-.goh-btn--secondary {
+.goh-row.goh-row--charcoal .goh-btn.goh-btn.goh-btn--primary:hover {
+    background-color: #696769;
+}
+
+.goh-btn.goh-btn.goh-btn--secondary {
     background-color: #fff;
     border-color: #2a2629;
     color: #2a2629;
 }
 
-.goh-btn--secondary:hover {
+.goh-btn.goh-btn.goh-btn--secondary:hover {
     background-color: #2a2629;
     border-color: #fff;
     text-decoration: none;
 }
 
-.goh-btn--tertiary.goh-btn--tertiary {
+.goh-btn.goh-btn.goh-btn--tertiary.goh-btn--tertiary {
     background-color: transparent;
     border: none;
     box-shadow: none;
@@ -209,7 +213,7 @@ footer .menu > .menu-item {
     text-decoration: underline;
 }
 
-.goh-btn--tertiary.goh-btn--tertiary:hover {
+.goh-btn.goh-btn.goh-btn--tertiary.goh-btn--tertiary:hover {
     background-color: transparent;
     border: none;
     color: #2a2629;
@@ -388,6 +392,21 @@ footer .menu > .menu-item {
 
 /*
 
+███╗   ██╗███████╗██╗    ██╗███████╗██╗     ███████╗████████╗████████╗███████╗██████╗ 
+████╗  ██║██╔════╝██║    ██║██╔════╝██║     ██╔════╝╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗
+██╔██╗ ██║█████╗  ██║ █╗ ██║███████╗██║     █████╗     ██║      ██║   █████╗  ██████╔╝
+██║╚██╗██║██╔══╝  ██║███╗██║╚════██║██║     ██╔══╝     ██║      ██║   ██╔══╝  ██╔══██╗
+██║ ╚████║███████╗╚███╔███╔╝███████║███████╗███████╗   ██║      ██║   ███████╗██║  ██║
+╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝ ╚══════╝╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝
+
+*/
+
+.goh-newsletter-subscribe__input {
+    background-color: #fff;
+}
+
+/*
+
 ███████╗██╗  ██╗ █████╗ ███╗   ███╗███████╗
 ██╔════╝██║  ██║██╔══██╗████╗ ████║██╔════╝
 ███████╗███████║███████║██╔████╔██║█████╗  
@@ -402,4 +421,12 @@ There are probably better solutions for these issues, but this is good enough
 /* For the Buy Season Tickets link in the main menu */
 .grve-square > .grve-item::after {
     display: none;
+}
+
+#grve-theme-wrapper .goh-row.goh-row--charcoal .goh-btn.goh-btn--primary:hover {
+    background-color: #696769;
+}
+
+#grve-theme-wrapper .goh-newsletter-subscribe__input {
+    background-color: #fff;
 }
