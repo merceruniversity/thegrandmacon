@@ -23,7 +23,7 @@ Template:     movedo
  * Goldenrod:    #ebae36
  * Candied Rose: #d2232a
  * Charcoal:     #2a2629
- * Grey:         #696769
+ * Ash:          #696769
  */
 
 /*
@@ -196,7 +196,7 @@ footer .menu > .menu-item {
 }
 
 .goh-btn--secondary:hover {
-    background-color: #2a262a;
+    background-color: #2a2629;
     border-color: #fff;
     text-decoration: none;
 }
@@ -212,7 +212,7 @@ footer .menu > .menu-item {
 .goh-btn--tertiary.goh-btn--tertiary:hover {
     background-color: transparent;
     border: none;
-    color: #2a262a;
+    color: #2a2629;
     text-decoration: underline;
 }
 
