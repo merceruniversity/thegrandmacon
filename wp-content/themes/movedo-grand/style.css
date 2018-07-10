@@ -367,18 +367,19 @@ footer .menu > .menu-item {
 
 */
 
-.mec-single-event-description a[href*="purchase.tickets.com/buy/TicketPurchase"] {
+.mec-single-event .mec-event-meta dd a.mec-more-info-button[href*="purchase.tickets.com/buy/TicketPurchase"] {
     box-shadow: rgba(0, 0, 0, 0.2) 0 5px 5px;
     border: 1px solid #d2232a;
     color: #fff;
-    display: inline-block;
+    display: block;
     font-family: 'Old Standard TT', Helvetica, Arial, sans-serif;
     font-size: 20px;
     background-color: #d2232a;
-    padding: 1rem 4rem;
+    padding: 1rem;
+    text-align: center;
 }
 
-.mec-single-event-description a[href*="purchase.tickets.com/buy/TicketPurchase"]:hover {
+.mec-single-event .mec-event-meta dd a.mec-more-info-button[href*="purchase.tickets.com/buy/TicketPurchase"]:hover {
     background-color: #2a2629;
     border: 1px solid #fff;
     box-shadow: rgba(0, 0, 0, 0.2) 0 5px 5px;
@@ -393,6 +394,8 @@ footer .menu > .menu-item {
 ╚════██║██╔══██║██╔══██║██║╚██╔╝██║██╔══╝  
 ███████║██║  ██║██║  ██║██║ ╚═╝ ██║███████╗
 ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
+
+There are probably better solutions for these issues, but this is good enough
 
 */
 
