@@ -403,6 +403,7 @@ footer .menu > .menu-item {
 
 .goh-newsletter-subscribe__input {
     background-color: #fff;
+    color: #000;
 }
 
 /*
@@ -418,15 +419,18 @@ There are probably better solutions for these issues, but this is good enough
 
 */
 
-/* For the Buy Season Tickets link in the main menu */
+/* Remove underline from button-like-links in the main menu */
 .grve-square > .grve-item::after {
     display: none;
 }
 
+/* Include wrapper element ID fore specificity */
 #grve-theme-wrapper .goh-row.goh-row--charcoal .goh-btn.goh-btn--primary:hover {
     background-color: #696769;
 }
 
-#grve-theme-wrapper .goh-newsletter-subscribe__input {
+/* Double wrapper element ID for specificity */
+#grve-theme-wrapper#grve-theme-wrapper .goh-newsletter-subscribe__input {
     background-color: #fff;
+    color: #000;
 }
