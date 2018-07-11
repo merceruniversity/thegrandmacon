@@ -408,6 +408,21 @@ footer .menu > .menu-item {
 
 /*
 
+███╗   ███╗███████╗ ██████╗
+████╗ ████║██╔════╝██╔════╝
+██╔████╔██║█████╗  ██║     
+██║╚██╔╝██║██╔══╝  ██║     
+██║ ╚═╝ ██║███████╗╚██████╗
+╚═╝     ╚═╝╚══════╝ ╚═════╝
+
+*/
+
+.mec-month-divider span:before {
+    border-bottom: 4px solid #ebae36;
+}
+
+/*
+
 ███████╗██╗  ██╗ █████╗ ███╗   ███╗███████╗
 ██╔════╝██║  ██║██╔══██╗████╗ ████║██╔════╝
 ███████╗███████║███████║██╔████╔██║█████╗  
@@ -415,7 +430,8 @@ footer .menu > .menu-item {
 ███████║██║  ██║██║  ██║██║ ╚═╝ ██║███████╗
 ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
 
-There are probably better solutions for these issues, but this is good enough
+These are the best solutions given the themes+plugins used,
+but, still, they're nothing to feel good about
 
 */
 
