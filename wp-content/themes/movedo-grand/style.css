@@ -371,6 +371,7 @@ footer .menu > .menu-item {
 
 */
 
+.mec-single-event-description a[href*="purchase.tickets.com/buy/TicketPurchase"],
 .mec-single-event .mec-event-meta dd a.mec-more-info-button[href*="purchase.tickets.com/buy/TicketPurchase"] {
     box-shadow: rgba(0, 0, 0, 0.2) 0 5px 5px;
     border: 1px solid #d2232a;
@@ -383,6 +384,13 @@ footer .menu > .menu-item {
     text-align: center;
 }
 
+.mec-single-event-description a[href*="purchase.tickets.com/buy/TicketPurchase"] {
+    display: inline-block;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.mec-single-event-description a[href*="purchase.tickets.com/buy/TicketPurchase"]:hover,
 .mec-single-event .mec-event-meta dd a.mec-more-info-button[href*="purchase.tickets.com/buy/TicketPurchase"]:hover {
     background-color: #2a2629;
     border: 1px solid #fff;
