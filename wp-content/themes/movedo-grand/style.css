@@ -398,6 +398,11 @@ footer .menu > .menu-item {
     color: #fff;
 }
 
+/* These look like headings in the MEC event meta box */
+.mec-single-event .mec-event-meta dt {
+    font-family: 'Old Standard TT', Helvetica, Arial, sans-serif;
+}
+
 /*
 
 ███╗   ██╗███████╗██╗    ██╗███████╗██╗     ███████╗████████╗████████╗███████╗██████╗ 
