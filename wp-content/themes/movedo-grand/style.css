@@ -421,6 +421,29 @@ footer .menu > .menu-item {
     border-bottom: 4px solid #ebae36;
 }
 
+.mec-events-masonry-cats a {
+    color: #2a2629;
+}
+
+.mec-events-masonry-cats a+a {
+    margin-left: 0.5rem;
+}
+
+.mec-events-masonry-cats a:hover {
+    border: 2px solid #2a2629;
+    color: #2a2629;
+}
+
+.mec-events-masonry-cats a.mec-masonry-cat-selected {
+    background-color: #2a2629;
+    border: 2px solid #2a2629;
+    color: #fff;
+}
+
+.mec-events-masonry-cats a.mec-masonry-cat-selected:hover {
+    color: #ebae36;
+}
+
 /*
 
 ███████╗██╗  ██╗ █████╗ ███╗   ███╗███████╗
