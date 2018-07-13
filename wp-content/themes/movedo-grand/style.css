@@ -1,4 +1,4 @@
-/*
+ /*
 Theme Name:   Movedo Child GOH
 Theme URI:    https://github.com/merceruniversity/thegrandmacon
 Description:  Movedo Child Theme for The Grand Opera House
@@ -319,6 +319,12 @@ footer .menu > .menu-item {
 }
 
 /* Skewed Box */
+
+@media only screen and (max-device-width: 767px) {
+    .goh-column-box.goh-column-box--skewed + .goh-column-box.goh-column-box--skewed {
+        margin-top: 3rem;
+    }
+}
 
 .goh-column-box.goh-column-box--skewed .grve-column-wrapper,
 .goh-column-box.goh-column-box--skewed .grve-column-wrapper-inner {
