@@ -31,10 +31,10 @@
 
 */
 
-function movedo_child_theme_enqueue_scripts() {
-    wp_enqueue_script( 'movedo-grand-js', get_stylesheet_directory_uri() . '/javascript.js', array(), '1.0', true );
-}
-add_action('wp_enqueue_scripts', 'movedo_child_theme_enqueue_scripts');
+// function movedo_child_theme_enqueue_scripts() {
+//     wp_enqueue_script( 'movedo-grand-js', get_stylesheet_directory_uri() . '/javascript.js', array(), '1.0', true );
+// }
+// add_action('wp_enqueue_scripts', 'movedo_child_theme_enqueue_scripts');
 
 /*
 
